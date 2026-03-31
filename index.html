@@ -987,4 +987,14 @@ footer span { font-size: 0.62rem; font-weight: 600; color: rgba(192,32,42,0.5); 
   </footer>
 </div>
 
-<script data-
+<script>
+function showPage(id) {
+  document.querySelectorAll(".page").forEach(function(p) { p.classList.remove("active"); });
+  document.querySelectorAll(".nav-links a").forEach(function(a) { a.classList.remove("active"); });
+  document.getElementById("page-" + id).classList.add("active");
+  document.getElementById("nav-" + id).classList.add("active");
+  window.scrollTo(0, 0);
+}
+</script>
+</body>
+</html>
