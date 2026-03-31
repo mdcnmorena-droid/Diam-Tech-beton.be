@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diam-Tech Béton — Carottage de Précision | Liège, Belgique</title>
+<meta name="description" content="Entreprise spécialisée en carottage béton de précision. Certifiée VCA. Interventions à Liège et toute la Wallonie. Devis gratuit 24h.">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --noir: #111111;
+  --gris-fonce: #2d2d2d;
+  --gris-moyen: #4a4a4a;
+  --gris-clair: #c0c0c0;
+  --rouge: #c0202a;
+  --rouge-vif: #d42030;
+  --blanc: #ffffff;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Montserrat', sans-serif; background: var(--noir); color: var(--blanc); }
+
+/* ─── NAV ─── */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 48px; height: 72px; background: rgba(17,17,17,0.97); border-bottom: 1px solid rgba(192,32,42,0.3); backdrop-filter: blur(8px); }
+.nav-logo { display: flex; align-items: center; cursor: pointer; }
+.nav-logo svg { height: 56px; width: auto; }
+.nav-links { display: flex; gap: 36px; list-style: none; }
+.nav-links a { color: var(--gris-clair); text-decoration: none; font-weight: 600; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; transition: color 0.2s; position: relative; padding-bottom: 4px; }
+.nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--rouge); transition: width 0.3s; }
+.nav-links a:hover, .nav-links a.active { color: var(--blanc); }
+.nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+
+/* Bouton appel mobile fixe */
+.call-btn-mobile { display: none; position: fixed; bottom: 24px; right: 24px; z-index: 200; background: var(--rouge); color: var(--blanc); width: 60px; height: 60px; border-radius: 50%; text-decoration: none; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(192,32,42,0.5); transition: transform 0.2s, background 0.2s; }
+.call-btn-mobile:hover { background: var(--rouge-vif); transform: scale(1.05); }
+@media (max-width: 768px) { .call-btn-mobile { display: flex; } .nav-links { gap: 16px; } .nav-links a { font-size: 0.6rem; } nav { padding: 0 20px; } }
+
+/* ─── PAGES ─── */
+.page { display: none; min-height: 100vh; padding-top: 72px; animation: fadeIn 0.4s ease; }
+.page.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ─── HERO ─── */
+.hero { height: calc(100vh - 72px); display: flex; align-items: center; justify-content: center; background: var(--noir); position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(-45deg, transparent, transparent 80px, rgba(192,32,42,0.02) 80px, rgba(192,32,42,0.02) 81px); pointer-events: none; }
+.hero-content { position: relative; padding: 0 80px; max-width: 900px; text-align: center; display: flex; flex-direction: column; align-items: center; }
+.hero-tag { display: inline-block; font-weight: 600; font-size: 0.62rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--rouge); border: 1px solid var(--rouge); padding: 6px 16px; margin-bottom: 32px; animation: fadeIn 0.6s ease 0.1s both; }
+.hero-title { font-style: italic; font-weight: 900; font-size: clamp(3rem, 8vw, 7rem); line-height: 0.95; letter-spacing: -0.02em; text-transform: uppercase; margin-bottom: 28px; animation: fadeIn 0.6s ease 0.2s both; }
+.hero-title em { color: var(--rouge); font-style: italic; display: block; }
+.hero-sub { font-size: 0.9rem; font-weight: 300; color: var(--gris-clair); line-height: 1.8; max-width: 500px; margin-bottom: 52px; animation: fadeIn 0.6s ease 0.3s both; letter-spacing: 0.01em; }
+.hero-ctas { display: flex; gap: 16px; justify-content: center; animation: fadeIn 0.6s ease 0.4s both; }
+.btn-primary { display: inline-block; font-weight: 600; font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 15px 36px; background: var(--rouge); color: var(--blanc); cursor: pointer; transition: background 0.2s, transform 0.1s; text-decoration: none; }
+.btn-primary:hover { background: var(--rouge-vif); transform: translateY(-2px); }
+.btn-outline { display: inline-block; font-weight: 600; font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 15px 36px; background: transparent; color: var(--blanc); border: 1px solid rgba(255,255,255,0.25); cursor: pointer; transition: border-color 0.2s, background 0.2s; text-decoration: none; }
+.btn-outline:hover { border-color: var(--blanc); background: rgba(255,255,255,0.04); }
+
+/* ─── ATOUTS ─── */
+.atouts { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(255,255,255,0.07); }
+.atout { padding: 52px 48px; border-right: 1px solid rgba(255,255,255,0.07); position: relative; overflow: hidden; transition: background 0.3s; }
+.atout:last-child { border-right: none; }
+.atout:hover { background: rgba(192,32,42,0.04); }
+.atout::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 0; background: var(--rouge); transition: height 0.4s; }
+.atout:hover::before { height: 100%; }
+.atout-num { font-style: italic; font-weight: 900; font-size: 3rem; color: rgba(192,32,42,0.12); line-height: 1; margin-bottom: 14px; }
+.atout-titre { font-weight: 700; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; }
+.atout-desc { font-size: 0.8rem; font-weight: 300; color: var(--gris-clair); line-height: 1.75; }
+
+/* ─── POURQUOI NOUS ─── */
+.pourquoi-section { background: var(--gris-fonce); padding: 80px; border-top: 1px solid rgba(255,255,255,0.07); }
+.pourquoi-section .section-header { margin-bottom: 52px; }
+.pourquoi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: rgba(255,255,255,0.05); }
+.pourquoi-card { background: var(--noir); padding: 40px 32px; position: relative; overflow: hidden; transition: background 0.3s; }
+.pourquoi-card:hover { background: #1a1a1a; }
+.pourquoi-card::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 3px; background: var(--rouge); transition: width 0.4s; }
+.pourquoi-card:hover::after { width: 100%; }
+.pourquoi-icon { width: 40px; height: 40px; color: var(--rouge); margin-bottom: 20px; }
+.pourquoi-card h3 { font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 10px; }
+.pourquoi-card p { font-size: 0.78rem; font-weight: 300; color: var(--gris-clair); line-height: 1.7; }
+
+/* ─── CLIENTS ─── */
+.clients-section { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid rgba(255,255,255,0.07); }
+.client-block { padding: 64px; }
+.client-block:first-child { border-right: 1px solid rgba(255,255,255,0.07); }
+.client-block-icon { width: 40px; height: 40px; color: var(--rouge); margin-bottom: 20px; }
+.client-block h3 { font-weight: 700; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 12px; }
+.client-block p { font-size: 0.82rem; font-weight: 300; color: var(--gris-clair); line-height: 1.8; margin-bottom: 20px; }
+.client-block ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.client-block ul li { font-size: 0.8rem; font-weight: 400; color: var(--gris-clair); padding-left: 16px; position: relative; line-height: 1.5; }
+.client-block ul li::before { content: '–'; position: absolute; left: 0; color: var(--rouge); }
+
+/* ─── MATÉRIAUX ─── */
+.materiaux-section { background: var(--gris-fonce); padding: 80px; border-top: 1px solid rgba(255,255,255,0.07); }
+.materiaux-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 2px; background: rgba(255,255,255,0.05); margin-top: 48px; }
+.materiau-card { background: var(--noir); padding: 32px 24px; text-align: center; transition: background 0.3s; position: relative; overflow: hidden; }
+.materiau-card:hover { background: #1a1a1a; }
+.materiau-card::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 3px; background: var(--rouge); transition: width 0.4s; }
+.materiau-card:hover::after { width: 100%; }
+.materiau-card svg { width: 36px; height: 36px; color: var(--rouge); margin-bottom: 14px; }
+.materiau-card h4 { font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
+.materiau-card p { font-size: 0.7rem; font-weight: 300; color: var(--gris-clair); line-height: 1.5; }
+
+/* ─── STATS ─── */
+.infos-rapides { display: grid; grid-template-columns: repeat(4, 1fr); background: var(--rouge); }
+.info-item { padding: 32px 36px; border-right: 1px solid rgba(255,255,255,0.2); text-align: center; }
+.info-item:last-child { border-right: none; }
+.info-val { font-style: italic; font-weight: 900; font-size: 2.2rem; display: block; margin-bottom: 4px; letter-spacing: -0.02em; }
+.info-label { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.85; }
+
+/* ─── ZONE INTERVENTION ─── */
+.zone-section { background: var(--noir); padding: 80px; border-top: 1px solid rgba(255,255,255,0.07); display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.zone-left h2 { font-style: italic; font-weight: 900; font-size: clamp(1.8rem, 3.5vw, 3rem); text-transform: uppercase; line-height: 1.0; margin-bottom: 20px; letter-spacing: -0.01em; }
+.zone-left p { font-size: 0.84rem; font-weight: 300; color: var(--gris-clair); line-height: 1.8; margin-bottom: 32px; }
+.zone-list { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: rgba(255,255,255,0.05); }
+.zone-item { background: var(--gris-fonce); padding: 16px 20px; display: flex; align-items: center; gap: 12px; transition: background 0.2s; }
+.zone-item:hover { background: #333; }
+.zone-dot { width: 6px; height: 6px; background: var(--rouge); border-radius: 50%; flex-shrink: 0; }
+.zone-item span { font-size: 0.78rem; font-weight: 500; color: var(--blanc); letter-spacing: 0.04em; }
+.zone-right { background: var(--gris-fonce); padding: 48px; border-left: 3px solid var(--rouge); }
+.zone-right h3 { font-weight: 700; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rouge); margin-bottom: 20px; }
+.zone-right p { font-size: 0.84rem; font-weight: 300; color: var(--gris-clair); line-height: 1.8; margin-bottom: 16px; }
+.zone-right p:last-child { margin-bottom: 0; }
+
+/* ─── PAGE HEADER ─── */
+.page-header { background: var(--gris-fonce); padding: 80px 80px 60px; border-bottom: 3px solid var(--rouge); position: relative; overflow: hidden; }
+.page-header::after { content: ''; position: absolute; right: -80px; top: -80px; width: 360px; height: 360px; background: radial-gradient(circle, rgba(192,32,42,0.1) 0%, transparent 70%); pointer-events: none; }
+.page-header-tag { font-weight: 600; font-size: 0.62rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--rouge); margin-bottom: 16px; display: block; }
+.page-header h1 { font-style: italic; font-weight: 900; font-size: clamp(2rem, 5vw, 3.8rem); text-transform: uppercase; line-height: 1.0; margin-bottom: 20px; letter-spacing: -0.01em; }
+.page-header p { color: var(--gris-clair); font-size: 0.86rem; font-weight: 300; max-width: 640px; line-height: 1.8; }
+
+/* ─── SECTION HEADER ─── */
+.section-header { margin-bottom: 48px; }
+.section-tag { font-weight: 600; font-size: 0.6rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--rouge); display: block; margin-bottom: 10px; }
+.section-title { font-style: italic; font-weight: 900; font-size: 1.9rem; text-transform: uppercase; letter-spacing: -0.01em; margin-bottom: 10px; }
+.section-sub { font-size: 0.82rem; font-weight: 300; color: var(--gris-clair); line-height: 1.75; max-width: 560px; }
+
+/* ─── SERVICES ─── */
+.services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; background: rgba(255,255,255,0.05); }
+.service-card { background: var(--gris-fonce); padding: 48px; position: relative; overflow: hidden; transition: background 0.3s; }
+.service-card:hover { background: #333; }
+.service-card::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 3px; background: var(--rouge); transition: width 0.4s; }
+.service-card:hover::after { width: 100%; }
+.service-card-full { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 52px; align-items: start; }
+.service-icon { width: 40px; height: 40px; margin-bottom: 20px; color: var(--rouge); }
+.service-card h3 { font-weight: 700; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 12px; }
+.service-card p { font-size: 0.82rem; font-weight: 300; color: var(--gris-clair); line-height: 1.8; margin-bottom: 16px; }
+.service-card ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.service-card ul li { font-size: 0.76rem; font-weight: 400; color: var(--gris-clair); padding-left: 14px; position: relative; line-height: 1.5; }
+.service-card ul li::before { content: '–'; position: absolute; left: 0; color: var(--rouge); }
+.service-explainer { background: rgba(0,0,0,0.25); padding: 32px; border-left: 3px solid rgba(192,32,42,0.3); }
+.service-explainer-title { font-weight: 700; font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rouge); margin-bottom: 14px; display: block; }
+
+/* ─── APPLICATIONS ─── */
+.applications-section { padding: 80px; border-top: 1px solid rgba(255,255,255,0.07); }
+.appli-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: rgba(255,255,255,0.05); }
+.appli-item { background: var(--gris-fonce); padding: 32px; display: flex; gap: 16px; align-items: flex-start; transition: background 0.3s; }
+.appli-item:hover { background: #333; }
+.appli-dot { width: 7px; height: 7px; background: var(--rouge); border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
+.appli-item strong { display: block; font-weight: 700; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--blanc); margin-bottom: 6px; }
+.appli-item p { font-size: 0.78rem; font-weight: 300; color: var(--gris-clair); line-height: 1.65; }
+
+/* ─── GUIDE DIAMÈTRES ─── */
+.guide-section { padding: 80px; background: var(--noir); border-top: 1px solid rgba(255,255,255,0.07); }
+.diametre-table { width: 100%; border-collapse: collapse; margin-bottom: 56px; }
+.diametre-table thead tr { background: var(--rouge); }
+.diametre-table thead th { padding: 14px 20px; text-align: left; font-weight: 600; font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; }
+.diametre-table tbody tr { border-bottom: 1px solid rgba(255,255,255,0.06); transition: background 0.2s; }
+.diametre-table tbody tr:hover { background: rgba(255,255,255,0.03); }
+.diametre-table tbody td { padding: 16px 20px; font-size: 0.8rem; font-weight: 300; color: var(--gris-clair); vertical-align: top; line-height: 1.5; }
+.diametre-table tbody td:first-child { font-style: italic; font-weight: 700; font-size: 0.95rem; color: var(--rouge); white-space: nowrap; }
+.diametre-table tbody td:nth-child(2) { color: var(--blanc); font-weight: 500; }
+.methodes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: rgba(255,255,255,0.05); margin-bottom: 56px; }
+.methode-card { background: var(--gris-fonce); padding: 40px 44px; }
+.methode-card h3 { font-weight: 700; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 12px; }
+.methode-tag { display: inline-block; font-size: 0.58rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; padding: 4px 10px; margin-bottom: 16px; }
+.methode-tag.sec { background: rgba(255,255,255,0.08); color: var(--gris-clair); }
+.methode-tag.eau { background: rgba(192,32,42,0.2); color: var(--rouge); border: 1px solid rgba(192,32,42,0.4); }
+.methode-card p { font-size: 0.81rem; font-weight: 300; color: var(--gris-clair); line-height: 1.8; margin-bottom: 16px; }
+.methode-card ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.methode-card ul li { font-size: 0.76rem; font-weight: 400; color: var(--gris-clair); padding-left: 14px; position: relative; line-height: 1.5; }
+.methode-card ul li::before { content: '–'; position: absolute; left: 0; color: var(--rouge); }
+.orientations-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: rgba(255,255,255,0.05); }
+.orient-card { background: var(--gris-fonce); padding: 36px; position: relative; overflow: hidden; transition: background 0.3s; }
+.orient-card:hover { background: #333; }
+.orient-card::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 3px; background: var(--rouge); transition: width 0.4s; }
+.orient-card:hover::after { width: 100%; }
+.orient-icon { font-style: italic; font-weight: 900; font-size: 2.2rem; color: rgba(192,32,42,0.2); line-height: 1; margin-bottom: 12px; }
+.orient-card h4 { font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px; }
+.orient-card p { font-size: 0.78rem; font-weight: 300; color: var(--gris-clair); line-height: 1.65; }
+
+/* ─── FAQ ─── */
+.faq-section { background: var(--gris-fonce); padding: 80px; border-top: 1px solid rgba(255,255,255,0.07); }
+.faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: rgba(255,255,255,0.05); margin-top: 48px; }
+.faq-item { background: var(--noir); padding: 36px 40px; position: relative; overflow: hidden; transition: background 0.3s; cursor: pointer; }
+.faq-item:hover { background: #1a1a1a; }
+.faq-item::before { content: ''; position: absolute; left: 0; top: 0; width: 3px; height: 0; background: var(--rouge); transition: height 0.4s; }
+.faq-item:hover::before { height: 100%; }
+.faq-q { font-weight: 700; font-size: 0.84rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; color: var(--blanc); padding-right: 24px; }
+.faq-a { font-size: 0.8rem; font-weight: 300; color: var(--gris-clair); line-height: 1.75; }
+.faq-num { font-style: italic; font-weight: 900; font-size: 1.4rem; color: rgba(192,32,42,0.2); float: right; line-height: 1; margin-top: -4px; }
+
+/* ─── CERTIF ─── */
+.certif-strip { background: var(--noir); padding: 48px 80px; display: flex; align-items: center; gap: 60px; border-top: 1px solid rgba(255,255,255,0.07); }
+.certif-badge { display: flex; flex-direction: column; align-items: center; gap: 8px; flex-shrink: 0; }
+.certif-badge .badge-icon { width: 60px; height: 60px; border: 2px solid var(--rouge); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--rouge); }
+.certif-badge span { font-weight: 600; font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gris-clair); text-align: center; }
+.certif-text h4 { font-weight: 700; font-size: 0.92rem; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px; }
+.certif-text p { font-size: 0.82rem; font-weight: 300; color: var(--gris-clair); line-height: 1.8; }
+
+/* ─── CONTACT ─── */
+.contact-layout { display: grid; grid-template-columns: 1fr 1fr; min-height: calc(100vh - 72px); }
+.contact-left { background: var(--gris-fonce); padding: 80px; display: flex; flex-direction: column; justify-content: center; border-right: 1px solid rgba(255,255,255,0.07); }
+.contact-left h2 { font-style: italic; font-weight: 900; font-size: clamp(1.6rem, 3.5vw, 2.8rem); text-transform: uppercase; line-height: 1.05; margin-bottom: 40px; letter-spacing: -0.01em; }
+.contact-infos { display: flex; flex-direction: column; gap: 22px; margin-bottom: 48px; }
+.contact-ligne { display: flex; gap: 18px; align-items: flex-start; }
+.contact-ligne-icon { width: 42px; height: 42px; background: rgba(192,32,42,0.1); border: 1px solid rgba(192,32,42,0.3); display: flex; align-items: center; justify-content: center; color: var(--rouge); flex-shrink: 0; }
+.contact-ligne-text strong { display: block; font-weight: 600; font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gris-clair); margin-bottom: 4px; }
+.contact-ligne-text span, .contact-ligne-text a { font-size: 0.86rem; font-weight: 400; color: var(--blanc); text-decoration: none; transition: color 0.2s; }
+.contact-ligne-text a:hover { color: var(--rouge); }
+.social-section { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 32px; }
+.social-label { font-weight: 600; font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gris-clair); margin-bottom: 16px; display: block; }
+.social-links { display: flex; gap: 10px; }
+.social-link { width: 44px; height: 44px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: var(--gris-clair); text-decoration: none; transition: border-color 0.2s, color 0.2s, background 0.2s; }
+.social-link:hover { border-color: var(--rouge); color: var(--blanc); background: rgba(192,32,42,0.1); }
+.contact-right { background: var(--noir); padding: 80px; display: flex; flex-direction: column; justify-content: center; }
+.contact-right h3 { font-weight: 700; font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rouge); margin-bottom: 32px; }
+.form-group { margin-bottom: 18px; }
+.form-group label { display: block; font-weight: 600; font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gris-clair); margin-bottom: 8px; }
+.form-group input, .form-group textarea, .form-group select { width: 100%; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); color: var(--blanc); padding: 13px 16px; font-family: 'Montserrat', sans-serif; font-size: 0.82rem; font-weight: 300; outline: none; transition: border-color 0.2s, background 0.2s; -webkit-appearance: none; }
+.form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--rouge); background: rgba(192,32,42,0.03); }
+.form-group select option { background: var(--gris-fonce); }
+.form-group textarea { resize: vertical; min-height: 100px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.form-submit { margin-top: 6px; width: 100%; padding: 15px; background: var(--rouge); color: var(--blanc); border: none; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; cursor: pointer; transition: background 0.2s; }
+.form-submit:hover { background: var(--rouge-vif); }
+
+/* ─── MENTIONS LÉGALES ─── */
+.mentions-content { padding: 72px 80px; }
+.mentions-block { margin-bottom: 52px; padding-bottom: 52px; border-bottom: 1px solid rgba(255,255,255,0.07); }
+.mentions-block:last-child { border-bottom: none; margin-bottom: 0; }
+.mentions-block h2 { font-style: italic; font-weight: 900; font-size: 1.4rem; text-transform: uppercase; letter-spacing: -0.01em; margin-bottom: 24px; padding-left: 16px; border-left: 3px solid var(--rouge); }
+.mentions-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: rgba(255,255,255,0.05); }
+.mentions-item { background: var(--gris-fonce); padding: 24px 28px; }
+.mentions-item .label { font-size: 0.58rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rouge); display: block; margin-bottom: 6px; }
+.mentions-item .value { font-size: 0.84rem; font-weight: 400; color: var(--blanc); }
+.mentions-text { font-size: 0.82rem; font-weight: 300; color: var(--gris-clair); line-height: 1.85; margin-bottom: 16px; }
+.mentions-text strong { color: var(--blanc); font-weight: 600; }
+.droits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: rgba(255,255,255,0.05); margin-top: 24px; }
+.droit-item { background: var(--gris-fonce); padding: 24px; text-align: center; }
+.droit-item .droit-icon { font-weight: 900; font-style: italic; font-size: 1.6rem; color: rgba(192,32,42,0.25); display: block; margin-bottom: 8px; }
+.droit-item h4 { font-weight: 700; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
+.droit-item p { font-size: 0.72rem; font-weight: 300; color: var(--gris-clair); line-height: 1.5; }
+.conformite-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: rgba(255,255,255,0.05); margin-top: 24px; }
+.conformite-item { background: var(--gris-fonce); padding: 28px 24px; }
+.conformite-item .conf-num { font-style: italic; font-weight: 900; font-size: 1.6rem; color: rgba(192,32,42,0.15); line-height: 1; margin-bottom: 10px; }
+.conformite-item h4 { font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 8px; }
+.conformite-item p { font-size: 0.75rem; font-weight: 300; color: var(--gris-clair); line-height: 1.7; }
+
+/* ─── FOOTER ─── */
+footer { background: #0a0a0a; padding: 24px 80px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(255,255,255,0.05); }
+footer p { font-size: 0.68rem; font-weight: 300; color: var(--gris-moyen); }
+footer span { font-size: 0.62rem; font-weight: 600; color: rgba(192,32,42,0.5); letter-spacing: 0.1em; text-transform: uppercase; }
+</style>
+</head>
+<body>
+
+<!-- BOUTON APPEL MOBILE -->
+<a href="tel:+32484296548" class="call-btn-mobile" title="Appeler maintenant">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14v2.92z"/>
+  </svg>
+</a>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo" onclick="showPage('accueil')">
+    <svg viewBox="0 0 252 144" xmlns="http://www.w3.org/2000/svg">
+      <text fill="#c2c2c3" font-family="Montserrat, sans-serif" font-size="21.85" font-style="italic" font-weight="900" letter-spacing="3" transform="translate(93.04 65.28)">DIAM-TECH</text>
+      <text fill="#c2c2c3" font-family="Montserrat, sans-serif" font-size="21.85" font-style="italic" font-weight="900" letter-spacing="3" transform="translate(120.56 86.82)">BÉTON</text>
+      <text fill="#7c7c7b" font-family="Montserrat, sans-serif" font-size="6.85" letter-spacing="2" transform="translate(95.54 99.64)">CAROTTAGE DE PRÉCISION</text>
+      <path fill="#a11916" d="M73.96,53.44l-6.72-7.81H27.16s-14.27,16.72-14.27,16.72l10.03,11.97,14.24,16.8,9.92,11.73c.25.3.41.58.76.55.31-.02.38-.17.73-.59l33.13-40.38-7.72-8.99ZM77.1,60.92c-1.12.18-2.16-.03-3.51.04l-2.86-7.26,6.36,7.22ZM70.94,60.93l-7.34.03,3.49-9.82,3.85,9.79ZM65.09,48.45c-.5,2.01-1.27,3.89-1.97,5.86l-1.78,5.32-10.83-11.2,14.58.02ZM57.8,61h-22.27s11.19-11.68,11.19-11.68l11.08,11.68ZM32.97,48.82l10.75.05-10.48,11.06-4.08-11.11h3.8ZM27.23,51.08l3.68,9.88-7.32.02,3.64-9.9ZM23.83,53.27l-2.72,7.67c-1.37.07-2.5.11-3.7.02l6.41-7.68ZM17.22,63.75l3.91-.07,5.07,10.49-8.99-10.43ZM32.52,81.56l-8.61-17.69,8.06.02,10.33,27.03c.6,1.5,1.21,2.64,1.51,4.09l-11.29-13.45ZM47.98,97.35c-.49-.08-.46-.57-.74-.96l-12.34-32.54,25.11.05-12.03,33.45ZM62.51,81.56l-10.81,13.38,11.18-31.04,7.91.02-6.14,13c-.74,1.57-1.12,3.38-2.14,4.65ZM68.64,74.5c1.51-3.69,3.25-6.74,4.78-10.59,1.25-.18,2.46-.15,3.67-.06l-8.45,10.65Z"/>
+    </svg>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#" id="nav-accueil" class="active" onclick="showPage('accueil'); return false;">Accueil</a></li>
+    <li><a href="#" id="nav-carottage" onclick="showPage('carottage'); return false;">Carottage</a></li>
+    <li><a href="#" id="nav-contact" onclick="showPage('contact'); return false;">Contact</a></li>
+    <li><a href="#" id="nav-mentions" onclick="showPage('mentions'); return false;">Mentions légales</a></li>
+  </ul>
+</nav>
+
+<!-- ══════════════════════════════════════════ ACCUEIL ══ -->
+<div id="page-accueil" class="page active">
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-tag">Belgium — Liège — Certifié VCA</div>
+      <h1 class="hero-title">Precision<br><em>dans le béton.</em></h1>
+      <p class="hero-sub">Spécialistes du carottage de précision en Belgique. Interventions rapides, résultats propres, zone de travail maîtrisée.</p>
+      <div class="hero-ctas">
+        <a href="#" class="btn-primary" onclick="showPage('carottage'); return false;">Nos prestations</a>
+        <a href="#" class="btn-outline" onclick="showPage('contact'); return false;">Demander un devis</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ATOUTS -->
+  <section class="atouts">
+    <div class="atout">
+      <div class="atout-num">01</div>
+      <div class="atout-titre">Certifié VCA</div>
+      <p class="atout-desc">Sécurité et conformité garanties sur chaque chantier. Respect strict des normes en vigueur.</p>
+    </div>
+    <div class="atout">
+      <div class="atout-num">02</div>
+      <div class="atout-titre">Interventions flexibles</div>
+      <p class="atout-desc">Disponibles en soirée et le week-end. Nous nous adaptons aux contraintes de votre chantier.</p>
+    </div>
+    <div class="atout">
+      <div class="atout-num">03</div>
+      <div class="atout-titre">Aspiration des boues</div>
+      <p class="atout-desc">Zone de travail maintenue propre grâce à notre système d'aspiration intégré.</p>
+    </div>
+  </section>
+
+  <!-- POURQUOI NOUS CHOISIR -->
+  <section class="pourquoi-section">
+    <div class="section-header">
+      <span class="section-tag">Nos engagements</span>
+      <h2 class="section-title">Pourquoi choisir Diam-Tech Béton ?</h2>
+      <p class="section-sub">Des arguments concrets qui font la différence sur chaque chantier.</p>
+    </div>
+    <div class="pourquoi-grid">
+      <div class="pourquoi-card">
+        <svg class="pourquoi-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8">
+          <circle cx="24" cy="24" r="18"/>
+          <polyline points="16,24 21,29 32,18"/>
+        </svg>
+        <h3>Devis gratuit sous 24h</h3>
+        <p>Réponse rapide garantie. Nous nous déplaçons sur chantier pour établir un prix juste et sans surprise.</p>
+      </div>
+      <div class="pourquoi-card">
+        <svg class="pourquoi-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8">
+          <circle cx="24" cy="12" r="6"/>
+          <path d="M12 40 C12 32 36 32 36 40"/>
+          <line x1="24" y1="18" x2="24" y2="28"/>
+        </svg>
+        <h3>Patron sur chantier</h3>
+        <p>Michael Hofmans intervient personnellement. Pas d'intermédiaire — vous avez affaire directement au spécialiste.</p>
+      </div>
+      <div class="pourquoi-card">
+        <svg class="pourquoi-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8">
+          <rect x="8" y="16" width="32" height="24" rx="2"/>
+          <path d="M16 16 L16 12 C16 8.7 19.1 6 24 6 C28.9 6 32 8.7 32 12 L32 16"/>
+          <circle cx="24" cy="28" r="3"/>
+        </svg>
+        <h3>Matériel professionnel</h3>
+        <p>Outillage diamant de haute performance, machines électriques et thermiques adaptées à chaque situation.</p>
+      </div>
+      <div class="pourquoi-card">
+        <svg class="pourquoi-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M24 4 L30 16 L44 18 L34 28 L36 42 L24 36 L12 42 L14 28 L4 18 L18 16 Z"/>
+        </svg>
+        <h3>Chantier propre garanti</h3>
+        <p>Aspiration des boues systématique. Nous laissons votre espace dans l'état où nous l'avons trouvé.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENTS -->
+  <section class="clients-section">
+    <div class="client-block">
+      <svg class="client-block-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.8">
+        <path d="M22 4 L38 14 L38 30 L22 40 L6 30 L6 14 Z"/><circle cx="22" cy="22" r="6"/>
+      </svg>
+      <h3>Particuliers</h3>
+      <p>Vous rénovez, aménagez ou agrandissez votre habitation ? Nous intervenons proprement, avec un minimum de nuisances, même en logement occupé.</p>
+      <ul>
+        <li>Passage de gaines électriques ou de plomberie</li>
+        <li>Création d'ouvertures de portes ou fenêtres</li>
+        <li>Installation de VMC ou climatisation</li>
+        <li>Percement pour poêle, hotte ou chaudière</li>
+        <li>Travaux en logement occupé</li>
+      </ul>
+    </div>
+    <div class="client-block">
+      <svg class="client-block-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.8">
+        <rect x="4" y="12" width="36" height="28" rx="1"/>
+        <path d="M14 12 L14 8 L30 8 L30 12"/>
+        <line x1="4" y1="22" x2="40" y2="22"/>
+        <line x1="22" y1="22" x2="22" y2="40"/>
+      </svg>
+      <h3>Professionnels</h3>
+      <p>Entrepreneurs, architectes, bureaux d'études, gestionnaires d'immeubles — nous sommes votre partenaire terrain fiable pour tous vos chantiers.</p>
+      <ul>
+        <li>Chantiers de génie civil et gros œuvre</li>
+        <li>Bâtiments industriels, hôpitaux, entrepôts</li>
+        <li>Réhabilitation et reprise en sous-œuvre</li>
+        <li>Chantiers publics et privés, toute envergure</li>
+        <li>Travaux en milieu sensible ou sous contraintes</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- MATÉRIAUX TRAITÉS -->
+  <section class="materiaux-section">
+    <div class="section-header">
+      <span class="section-tag">Expertise technique</span>
+      <h2 class="section-title">Matériaux traités</h2>
+      <p class="section-sub">La technique diamant permet d'intervenir sur tous types de supports, quelle que soit leur résistance ou leur composition.</p>
+    </div>
+    <div class="materiaux-grid">
+      <div class="materiau-card">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8">
+          <rect x="8" y="8" width="32" height="32" rx="1"/>
+          <line x1="8" y1="24" x2="40" y2="24"/>
+          <line x1="24" y1="8" x2="24" y2="40"/>
+        </svg>
+        <h4>Béton</h4>
+        <p>Standard, cellulaire, léger</p>
+      </div>
+      <div class="materiau-card">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8">
+          <rect x="8" y="8" width="32" height="32" rx="1"/>
+          <line x1="8" y1="24" x2="40" y2="24"/>
+          <line x1="24" y1="8" x2="24" y2="40"/>
+          <circle cx="24" cy="24" r="5"/>
+        </svg>
+        <h4>Béton armé</h4>
+        <p>Toutes densités de ferraillage</p>
+      </div>
+      <div class="materiau-card">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8">
+          <rect x="6" y="10" width="16" height="10" rx="1"/>
+          <rect x="26" y="10" width="16" height="10" rx="1"/>
+          <rect x="16" y="28" width="16" height="10" rx="1"/>
+          <rect x="6" y="28" width="8" height="10" rx="1"/>
+          <rect x="34" y="28" width="8" height="10" rx="1"/>
+        </svg>
+        <h4>Brique</h4>
+        <p>Pleine, creuse, réfractaire</p>
+      </div>
+      <div class="materiau-card">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8">
+          <rect x="8" y="8" width="32" height="32" rx="1"/>
+          <path d="M8 20 L20 8"/>
+          <path d="M8 32 L32 8"/>
+          <path d="M20 40 L40 20"/>
+          <path d="M32 40 L40 32"/>
+        </svg>
+        <h4>Parpaing</h4>
+        <p>Creux ou plein</p>
+      </div>
+      <div class="materiau-card">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8">
+          <polygon points="24,6 42,36 6,36"/>
+          <line x1="24" y1="6" x2="24" y2="36"/>
+          <line x1="6" y1="36" x2="42" y2="36"/>
+        </svg>
+        <h4>Pierre naturelle</h4>
+        <p>Calcaire, grès, granit</p>
+      </div>
+      <div class="materiau-card">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8">
+          <rect x="4" y="28" width="40" height="12" rx="1"/>
+          <path d="M8 28 L8 12 L40 12 L40 28"/>
+          <line x1="4" y1="20" x2="44" y2="20"/>
+        </svg>
+        <h4>Asphalte</h4>
+        <p>Voirie, revêtements</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="infos-rapides">
+    <div class="info-item"><span class="info-val">VCA</span><span class="info-label">Certifié</span></div>
+    <div class="info-item"><span class="info-val">7/7</span><span class="info-label">Disponibilité</span></div>
+    <div class="info-item"><span class="info-val">24h</span><span class="info-label">Devis gratuit</span></div>
+    <div class="info-item"><span class="info-val">1000</span><span class="info-label">mm max Ø</span></div>
+  </div>
+
+  <!-- ZONE D'INTERVENTION -->
+  <section class="zone-section">
+    <div class="zone-left">
+      <span class="section-tag">Déplacements</span>
+      <h2>Zone<br>d'intervention</h2>
+      <p>Basé à Saint-Georges-sur-Meuse (province de Liège), Diam-Tech Béton intervient rapidement dans toute la Wallonie et au-delà.</p>
+      <div class="zone-list">
+        <div class="zone-item"><div class="zone-dot"></div><span>Province de Liège</span></div>
+        <div class="zone-item"><div class="zone-dot"></div><span>Province de Namur</span></div>
+        <div class="zone-item"><div class="zone-dot"></div><span>Province du Hainaut</span></div>
+        <div class="zone-item"><div class="zone-dot"></div><span>Province du Luxembourg</span></div>
+        <div class="zone-item"><div class="zone-dot"></div><span>Brabant wallon</span></div>
+        <div class="zone-item"><div class="zone-dot"></div><span>Bruxelles</span></div>
+        <div class="zone-item"><div class="zone-dot"></div><span>Nord de la France</span></div>
+        <div class="zone-item"><div class="zone-dot"></div><span>Sur devis — autres régions</span></div>
+      </div>
+    </div>
+    <div class="zone-right">
+      <h3>Intervention prioritaire</h3>
+      <p>La province de Liège et les zones limitrophes bénéficient d'un délai d'intervention particulièrement rapide. Nous pouvons souvent intervenir le jour même ou le lendemain pour les demandes urgentes.</p>
+      <p>Pour les chantiers situés hors de notre zone habituelle, n'hésitez pas à nous contacter — nous étudions chaque demande et nous déplaçons sur l'ensemble du territoire belge ainsi qu'en France frontalière.</p>
+      <p style="margin-top:24px; padding-top:24px; border-top:1px solid rgba(255,255,255,0.08); font-size:0.78rem; color:#c0202a; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;">Devis gratuit · Déplacement inclus · Réponse sous 24h</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>TVA: BE 1035.597.041 — RPM Liège — www.diam-tech-beton.be</p>
+    <span>Diam-Tech Béton © 2026</span>
+  </footer>
+</div>
+
+<!-- ══════════════════════════════════════════ CAROTTAGE ══ -->
+<div id="page-carottage" class="page">
+
+  <div class="page-header">
+    <span class="page-header-tag">Nos prestations</span>
+    <h1>Carottage<br>de précision</h1>
+    <p>Technique diamant à l'eau pour des découpes nettes, précises et sans vibrations excessives. Exécution basée sur les axes tracés et validés par le client. Aspiration des boues systématique pour un chantier propre.</p>
+  </div>
+
+  <!-- SERVICES -->
+  <div class="services-grid">
+    <div class="service-card">
+      <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8">
+        <circle cx="24" cy="24" r="16"/><circle cx="24" cy="24" r="7"/>
+        <line x1="24" y1="2" x2="24" y2="9"/><line x1="24" y1="39" x2="24" y2="46"/>
+        <line x1="2" y1="24" x2="9" y2="24"/><line x1="39" y1="24" x2="46" y2="24"/>
+      </svg>
+      <h3>Carottage béton</h3>
+      <p>Perçage circulaire de haute précision dans tous types de structures béton, armé ou non. Diamètres de 25 mm à 1000 mm. Carottage horizontal, vertical ou incliné.</p>
+      <ul>
+        <li>Dalles, murs porteurs, voiles, poutres</li>
+        <li>Béton armé dense — couronne diamantée</li>
+        <li>Carottage à l'eau : coupe nette, poussière réduite</li>
+        <li>Forages jusqu'à plusieurs mètres de profondeur</li>
+      </ul>
+    </div>
+    <div class="service-card">
+      <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8">
+        <path d="M8 40 L8 10 L28 10 L40 22 L40 40 Z"/>
+        <path d="M28 10 L28 22 L40 22"/>
+        <line x1="14" y1="28" x2="34" y2="28"/>
+        <line x1="14" y1="34" x2="28" y2="34"/>
+      </svg>
+      <h3>Passage de réseaux &amp; gaines</h3>
+      <p>Création d'ouvertures calibrées pour l'ensemble des réseaux techniques d'un bâtiment. Résultat propre et précis, sans dégrader la structure existante.</p>
+      <ul>
+        <li>Gaines VMC, conduits de ventilation</li>
+        <li>Tuyauteries de plomberie et évacuations</li>
+        <li>Câbles électriques, fibres optiques</li>
+        <li>Réseaux CVC (chauffage, ventilation, climatisation)</li>
+      </ul>
+    </div>
+    <div class="service-card">
+      <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8">
+        <rect x="6" y="14" width="36" height="20" rx="1"/>
+        <line x1="6" y1="24" x2="42" y2="24"/>
+        <line x1="2" y1="24" x2="6" y2="24"/>
+        <circle cx="4" cy="24" r="2"/>
+        <line x1="24" y1="14" x2="24" y2="34"/>
+      </svg>
+      <h3>Ancrages &amp; fixations structurelles</h3>
+      <p>Réalisation de percements de précision pour la mise en place d'ancrages chimiques ou mécaniques. Idéal pour les fixations lourdes nécessitant une haute résistance.</p>
+      <ul>
+        <li>Pose de garde-corps et lignes de vie</li>
+        <li>Fixation de structures métalliques</li>
+        <li>Scellements chimiques haute résistance</li>
+        <li>Tirants d'ancrage et chevilles lourdes</li>
+      </ul>
+    </div>
+    <div class="service-card">
+      <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8">
+        <rect x="4" y="26" width="40" height="18" rx="1"/>
+        <line x1="4" y1="26" x2="44" y2="26"/>
+        <path d="M10 26 L10 8 L38 8 L38 26"/>
+        <line x1="10" y1="17" x2="38" y2="17"/>
+        <line x1="24" y1="8" x2="24" y2="26"/>
+      </svg>
+      <h3>Démolition contrôlée</h3>
+      <p>Intervention chirurgicale pour démolitions partielles, création de trémies et reprises en sous-œuvre. L'intégrité de la structure est préservée.</p>
+      <ul>
+        <li>Création de trémies pour escaliers ou ascenseurs</li>
+        <li>Reprises en sous-œuvre béton armé</li>
+        <li>Désolidarisation avant démolition</li>
+        <li>Travaux en milieu occupé ou sensible</li>
+      </ul>
+    </div>
+    <div class="service-card service-card-full">
+      <div>
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8">
+          <circle cx="16" cy="24" r="10"/><circle cx="32" cy="24" r="10"/>
+          <line x1="16" y1="14" x2="16" y2="34"/><line x1="32" y1="14" x2="32" y2="34"/>
+        </svg>
+        <h3>Carottage sécant</h3>
+        <p>Technique permettant de réaliser des ouvertures de très grande taille en multipliant des forages circulaires jointifs. Les cercles se recoupent pour former un contour, et la matière centrale est ensuite évacuée.</p>
+        <ul>
+          <li>Ouvertures de plus de 100 cm de diamètre</li>
+          <li>Trémies de grande dimension dans dalles et voiles</li>
+          <li>Passages de grosses tuyauteries industrielles</li>
+          <li>Gaines de ventilation centrale surdimensionnées</li>
+          <li>Alternative précise pour géométries complexes</li>
+        </ul>
+      </div>
+      <div class="service-explainer">
+        <span class="service-explainer-title">Comment ça fonctionne</span>
+        <p>Contrairement au carottage simple qui produit un trou unique circulaire, le carottage sécant consiste à multiplier les forages autour du périmètre de l'ouverture souhaitée. Chaque carotte est extraite individuellement, et les percements se recoupent légèrement pour que le bloc central puisse être dégagé.</p>
+        <p>Le résultat est une ouverture de grande taille aux bords précis, réalisée sans percussion lourde, sans vibrations structurelles — même dans le béton fortement armé.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- APPLICATIONS -->
+  <section class="applications-section">
+    <div class="section-header">
+      <span class="section-tag">Cas d'usage</span>
+      <h2 class="section-title">Applications concrètes</h2>
+      <p class="section-sub">Partout où la précision et la propreté de coupe sont indispensables.</p>
+    </div>
+    <div class="appli-grid">
+      <div class="appli-item"><div class="appli-dot"></div><div><strong>Rénovation résidentielle</strong><p>Passage de gaines en logement occupé, création de portes ou fenêtres, installation VMC ou climatisation.</p></div></div>
+      <div class="appli-item"><div class="appli-dot"></div><div><strong>Bâtiments industriels</strong><p>Traversées de murs porteurs, passages de canalisations industrielles, fixations lourdes sur structures existantes.</p></div></div>
+      <div class="appli-item"><div class="appli-dot"></div><div><strong>Hôpitaux &amp; laboratoires</strong><p>Interventions en milieu sensible avec nuisances minimisées — poussière et vibrations maîtrisées.</p></div></div>
+      <div class="appli-item"><div class="appli-dot"></div><div><strong>Génie civil &amp; voirie</strong><p>Passages de canalisations sous voirie, traversées de fondations, interventions sur ouvrages d'art.</p></div></div>
+      <div class="appli-item"><div class="appli-dot"></div><div><strong>Immeubles &amp; copropriétés</strong><p>Travaux en parties communes, réservations pour équipements collectifs, interventions en étages.</p></div></div>
+      <div class="appli-item"><div class="appli-dot"></div><div><strong>Évacuations &amp; toitures</strong><p>Création de systèmes d'évacuation des eaux pluviales sur balcons, toitures et terrasses en béton.</p></div></div>
+    </div>
+  </section>
+
+  <!-- GUIDE DIAMÈTRES -->
+  <section class="guide-section">
+    <div class="section-header">
+      <span class="section-tag">Guide technique</span>
+      <h2 class="section-title">Le bon diamètre pour chaque besoin</h2>
+      <p class="section-sub">Le diamètre du carottage est choisi en fonction de ce qui doit passer dans l'ouverture.</p>
+    </div>
+    <table class="diametre-table">
+      <thead><tr><th>Diamètre</th><th>Usage typique</th><th>Exemples concrets</th></tr></thead>
+      <tbody>
+        <tr><td>Ø 25–50 mm</td><td>Câbles &amp; petits passages</td><td>Câbles électriques, fibres optiques, petites chevilles d'ancrage, conduits d'interphone</td></tr>
+        <tr><td>Ø 50–80 mm</td><td>Canalisations légères</td><td>Tuyaux de plomberie, évacuations de faible section, câbles sous gaine, vannes de passage</td></tr>
+        <tr><td>Ø 80–125 mm</td><td>Gaines &amp; tuyaux standards</td><td>Gaines VMC, tuyaux d'alimentation eau, conduits de chauffage, passages de colonnes montantes</td></tr>
+        <tr><td>Ø 125–200 mm</td><td>Ventilation &amp; climatisation</td><td>Conduits de ventilation double flux, gaines de climatisation, colonnes d'évacuation PVC</td></tr>
+        <tr><td>Ø 200–350 mm</td><td>Grandes gaines &amp; trémies</td><td>Conduits d'extraction industriels, passages de gros tuyaux, évacuations d'eaux pluviales en toiture</td></tr>
+        <tr><td>Ø 350–1000 mm</td><td>Trémies &amp; ouvertures structurelles</td><td>Passages de colonnes techniques, accès sous-sol, réservations pour équipements lourds</td></tr>
+      </tbody>
+    </table>
+
+    <div class="section-header" style="margin-top:56px;">
+      <h2 class="section-title">Carottage à sec ou à l'eau ?</h2>
+      <p class="section-sub">Le choix de la méthode dépend du contexte du chantier et du diamètre à réaliser.</p>
+    </div>
+    <div class="methodes-grid">
+      <div class="methode-card">
+        <span class="methode-tag sec">Carottage à sec</span>
+        <h3>À sec — avec aspiration</h3>
+        <p>Idéal en intérieur, dans des espaces finis ou sensibles où l'eau causerait des dégâts.</p>
+        <ul>
+          <li>Intérieur logement occupé, parquets, finitions</li>
+          <li>Petits diamètres jusqu'à environ 100 mm</li>
+          <li>Pose de poêles, ventouses, grilles d'aération</li>
+          <li>Chantiers où l'eau est proscrite</li>
+        </ul>
+      </div>
+      <div class="methode-card">
+        <span class="methode-tag eau">Carottage à l'eau</span>
+        <h3>À l'eau — avec aspiration des boues</h3>
+        <p>Technique de référence pour le béton armé et les grands diamètres. L'eau refroidit la couronne et évacue les résidus — aspirés en continu chez Diam-Tech Béton.</p>
+        <ul>
+          <li>Béton armé dense, tous diamètres</li>
+          <li>Grand diamètre à partir de 100 mm</li>
+          <li>Chantiers extérieurs et en construction</li>
+          <li>Forage en profondeur jusqu'à plusieurs mètres</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-header" style="margin-top:56px;">
+      <h2 class="section-title">Horizontal, vertical ou incliné</h2>
+      <p class="section-sub">La carotteuse s'adapte à toutes les orientations selon la configuration du chantier.</p>
+    </div>
+    <div class="orientations-grid">
+      <div class="orient-card">
+        <div class="orient-icon">H</div>
+        <h4>Carottage horizontal</h4>
+        <p>Traversée de murs et cloisons pour passages de gaines, conduits de climatisation, tuyaux de plomberie ou câbles électriques.</p>
+      </div>
+      <div class="orient-card">
+        <div class="orient-icon">V</div>
+        <h4>Carottage vertical</h4>
+        <p>Perçage de dalles de plancher pour passages de colonnes, évacuations, ancrages structurels ou création de trémies.</p>
+      </div>
+      <div class="orient-card">
+        <div class="orient-icon">∠</div>
+        <h4>Carottage incliné</h4>
+        <p>Percements obliques pour configurations spécifiques : drainages, ancrages en biais, passages contraints par la géométrie du bâtiment.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="section-header">
+      <span class="section-tag">Questions fréquentes</span>
+      <h2 class="section-title">FAQ</h2>
+      <p class="section-sub">Les réponses aux questions que nos clients posent le plus souvent avant une intervention.</p>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <span class="faq-num">01</span>
+        <div class="faq-q">Combien de temps dure une intervention ?</div>
+        <div class="faq-a">Un carottage simple (1 à 5 trous) prend généralement entre 1 et 3 heures selon le diamètre et l'épaisseur. Une intervention plus complexe peut prendre une demi-journée ou une journée complète. Nous vous donnons une estimation précise lors du devis.</div>
+      </div>
+      <div class="faq-item">
+        <span class="faq-num">02</span>
+        <div class="faq-q">Faut-il vider la pièce avant l'intervention ?</div>
+        <div class="faq-a">Pas nécessairement. Nous protégeons la zone de travail et aspirons les boues en continu. Un espace d'environ 1 mètre autour du point de perçage doit être dégagé. Nous intervenons régulièrement en logement ou bureau occupé.</div>
+      </div>
+      <div class="faq-item">
+        <span class="faq-num">03</span>
+        <div class="faq-q">Intervenez-vous le week-end ou en soirée ?</div>
+        <div class="faq-a">Oui, nous sommes disponibles 7j/7, y compris en soirée et le week-end, pour nous adapter aux contraintes des chantiers en activité, des copropriétés ou des entreprises qui ne peuvent pas arrêter leur activité en semaine.</div>
+      </div>
+      <div class="faq-item">
+        <span class="faq-num">04</span>
+        <div class="faq-q">Le carottage fait-il beaucoup de bruit et de poussière ?</div>
+        <div class="faq-a">Le carottage diamant est bien moins bruyant qu'un marteau piqueur ou une perceuse à percussion. Le bruit est comparable à celui d'une perceuse standard. La poussière est quasiment nulle grâce à notre système d'aspiration intégré.</div>
+      </div>
+      <div class="faq-item">
+        <span class="faq-num">05</span>
+        <div class="faq-q">Puis-je avoir un devis avant de m'engager ?</div>
+        <div class="faq-a">Absolument. Le devis est entièrement gratuit et sans engagement. Remplissez notre formulaire de contact ou appelez-nous directement. Nous vous répondons sous 24h et nous déplaçons sur chantier si nécessaire pour établir un prix précis.</div>
+      </div>
+      <div class="faq-item">
+        <span class="faq-num">06</span>
+        <div class="faq-q">Que se passe-t-il si on touche un câble ou une canalisation ?</div>
+        <div class="faq-a">C'est précisément pourquoi la localisation des réseaux via KLIM-CICC est obligatoire en Belgique avant tout forage. Il incombe au client ou au maître d'ouvrage d'effectuer cette démarche. Diam-Tech Béton décline toute responsabilité pour les réseaux non signalés.</div>
+      </div>
+      <div class="faq-item">
+        <span class="faq-num">07</span>
+        <div class="faq-q">Intervenez-vous sur des constructions anciennes en pierre ?</div>
+        <div class="faq-a">Oui, notre matériel diamant permet d'intervenir sur tous types de matériaux : béton, béton armé, brique, parpaing, pierre naturelle (calcaire, grès, granit) et même l'asphalte. Chaque matériau nécessite une couronne et une technique adaptées.</div>
+      </div>
+      <div class="faq-item">
+        <span class="faq-num">08</span>
+        <div class="faq-q">Quelle est votre zone d'intervention ?</div>
+        <div class="faq-a">Nous intervenons principalement en province de Liège et dans toute la Wallonie. Nous nous déplaçons également à Bruxelles et dans le Nord de la France. Pour les chantiers plus éloignés, contactez-nous — nous étudions chaque demande.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIF -->
+  <div class="certif-strip">
+    <div class="certif-badge">
+      <div class="badge-icon">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M13 2 L16 9 L24 9 L18 14 L20 22 L13 17 L6 22 L8 14 L2 9 L10 9 Z"/>
+        </svg>
+      </div>
+      <span>Certifié<br>VCA</span>
+    </div>
+    <div class="certif-text">
+      <h4>Technique diamant — Sécurité &amp; Propreté garanties</h4>
+      <p>Le carottage diamant à l'eau est la seule technique garantissant une découpe nette tout en réduisant au maximum les vibrations et la poussière. Diam-Tech Béton opère sous certification VCA. L'exécution est basée sur les axes tracés et validés par le client — Diam-Tech décline toute responsabilité pour les réseaux non signalés.</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>TVA: BE 1035.597.041 — RPM Liège — www.diam-tech-beton.be</p>
+    <span>Diam-Tech Béton © 2026</span>
+  </footer>
+</div>
+
+<!-- ══════════════════════════════════════════ CONTACT ══ -->
+<div id="page-contact" class="page">
+  <div class="contact-layout">
+    <div class="contact-left">
+      <span class="page-header-tag">Nous contacter</span>
+      <h2>Parlons de<br>votre chantier.</h2>
+      <div class="contact-infos">
+        <div class="contact-ligne">
+          <div class="contact-ligne-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14v2.92z"/></svg>
+          </div>
+          <div class="contact-ligne-text"><strong>Téléphone</strong><a href="tel:+32484296548">0484 29 65 48</a></div>
+        </div>
+        <div class="contact-ligne">
+          <div class="contact-ligne-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div class="contact-ligne-text"><strong>Email</strong><a href="mailto:info@diam-tech-beton.be">info@diam-tech-beton.be</a></div>
+        </div>
+        <div class="contact-ligne">
+          <div class="contact-ligne-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="contact-ligne-text"><strong>Adresse</strong><span>4470 Saint-Georges-sur-Meuse, Belgique</span></div>
+        </div>
+        <div class="contact-ligne">
+          <div class="contact-ligne-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+          </div>
+          <div class="contact-ligne-text"><strong>Disponibilité</strong><span>7j/7 — soir &amp; week-end</span></div>
+        </div>
+        <div class="contact-ligne">
+          <div class="contact-ligne-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          </div>
+          <div class="contact-ligne-text"><strong>Zone d'intervention</strong><span>Wallonie, Bruxelles, Nord de la France</span></div>
+        </div>
+      </div>
+      <div class="social-section">
+        <span class="social-label">Suivez-nous</span>
+        <div class="social-links">
+          <a href="https://www.facebook.com/share/1DtrREfa5M/?mibextid=wwXIfr" target="_blank" class="social-link" title="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="https://wa.me/32484296548" target="_blank" class="social-link" title="WhatsApp">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="contact-right">
+      <h3>Demande de devis gratuit — réponse sous 24h</h3>
+      <form action="https://formspree.io/f/mwvwbory" method="POST">
+        <div class="form-row">
+          <div class="form-group"><label>Prénom</label><input type="text" name="prenom" placeholder="Michael" required></div>
+          <div class="form-group"><label>Nom</label><input type="text" name="nom" placeholder="Hofmans" required></div>
+        </div>
+        <div class="form-group"><label>Téléphone</label><input type="tel" name="telephone" placeholder="04XX XX XX XX"></div>
+        <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="votre@email.be" required></div>
+        <div class="form-group">
+          <label>Type de prestation</label>
+          <select name="prestation">
+            <option value="">Sélectionnez...</option>
+            <option>Carottage béton</option>
+            <option>Passage de réseaux &amp; gaines</option>
+            <option>Ancrages &amp; fixations structurelles</option>
+            <option>Carottage sécant</option>
+            <option>Démolition contrôlée</option>
+            <option>Autre / à préciser</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Description du chantier</label><textarea name="description" placeholder="Décrivez votre projet, dimensions, contraintes, délais souhaités..."></textarea></div>
+        <button type="submit" class="form-submit">Envoyer ma demande →</button>
+      </form>
+    </div>
+  </div>
+  <footer>
+    <p>TVA: BE 1035.597.041 — RPM Liège — www.diam-tech-beton.be</p>
+    <span>Diam-Tech Béton © 2026</span>
+  </footer>
+</div>
+
+<!-- ══════════════════════════════════════════ MENTIONS LÉGALES ══ -->
+<div id="page-mentions" class="page">
+  <div class="page-header">
+    <span class="page-header-tag">Conformité &amp; Transparence</span>
+    <h1>Mentions légales &amp;<br>Confidentialité</h1>
+    <p>Conformément à la législation belge et au Règlement Général sur la Protection des Données (RGPD — UE 2016/679). Dernière mise à jour : mars 2026.</p>
+  </div>
+
+  <div class="mentions-content">
+
+    <!-- ÉDITEUR -->
+    <div class="mentions-block">
+      <h2>1. Éditeur du site</h2>
+      <div class="mentions-grid">
+        <div class="mentions-item"><span class="label">Raison sociale</span><span class="value">Diam-Tech Béton</span></div>
+        <div class="mentions-item"><span class="label">Responsable</span><span class="value">Michael Hofmans — Administrateur délégué</span></div>
+        <div class="mentions-item"><span class="label">Adresse</span><span class="value">4470 Saint-Georges-sur-Meuse, Belgique</span></div>
+        <div class="mentions-item"><span class="label">Téléphone</span><span class="value">0484 29 65 48</span></div>
+        <div class="mentions-item"><span class="label">Email</span><span class="value">info@diam-tech-beton.be</span></div>
+        <div class="mentions-item"><span class="label">N° TVA</span><span class="value">BE 1035.597.041</span></div>
+        <div class="mentions-item"><span class="label">RPM</span><span class="value">Tribunal de l'entreprise de Liège</span></div>
+        <div class="mentions-item"><span class="label">Certification</span><span class="value">VCA — Veiligheid, gezondheid en milieu Checklist Aannemers</span></div>
+      </div>
+    </div>
+
+    <!-- HÉBERGEMENT -->
+    <div class="mentions-block">
+      <h2>2. Hébergement</h2>
+      <div class="mentions-grid">
+        <div class="mentions-item"><span class="label">Hébergeur</span><span class="value">Combell NV</span></div>
+        <div class="mentions-item"><span class="label">Adresse</span><span class="value">Skaldenstraat 121, 9042 Gent, Belgique</span></div>
+        <div class="mentions-item"><span class="label">Site web</span><span class="value">www.combell.com</span></div>
+        <div class="mentions-item"><span class="label">Design</span><span class="value">DOUBLE/M — Morena Mendicino, graphiste, Liège</span></div>
+      </div>
+    </div>
+
+    <!-- RESPONSABILITÉ CHANTIER -->
+    <div class="mentions-block">
+      <h2>3. Responsabilité &amp; Conformité chantier</h2>
+      <p class="mentions-text">Diam-Tech Béton s'efforce de fournir des informations exactes sur ce site. L'entreprise ne peut être tenue responsable des erreurs ou omissions dans le contenu, ni des dommages résultant de leur utilisation.</p>
+      <p class="mentions-text"><strong>Validation des axes :</strong> L'exécution des travaux est basée exclusivement sur les axes tracés et validés par le client avant tout début d'intervention. Toute modification en cours de chantier doit faire l'objet d'une validation écrite préalable.</p>
+      <p class="mentions-text"><strong>Réseaux non signalés :</strong> Diam-Tech Béton décline toute responsabilité pour les dommages causés par des réseaux souterrains ou encastrés non signalés (câbles électriques, conduites de gaz, canalisations d'eau, fibres optiques, etc.).</p>
+      <div class="conformite-grid">
+        <div class="conformite-item">
+          <div class="conf-num">AR</div>
+          <h4>KLIM-CICC</h4>
+          <p>Conformément à l'Arrêté Royal belge du 12 mars 2012, tout donneur d'ordre est légalement tenu d'effectuer une demande de localisation des câbles et conduites via klim-cicc.be avant tout forage ou excavation.</p>
+        </div>
+        <div class="conformite-item">
+          <div class="conf-num">VCA</div>
+          <h4>Certification sécurité</h4>
+          <p>Diam-Tech Béton opère sous certification VCA (Veiligheid, gezondheid en milieu Checklist Aannemers), garantissant le respect des normes de sécurité, de santé et d'environnement.</p>
+        </div>
+        <div class="conformite-item">
+          <div class="conf-num">BE</div>
+          <h4>Droit applicable</h4>
+          <p>Tous les travaux sont exécutés conformément au droit belge. En cas de litige, les tribunaux de l'arrondissement judiciaire de Liège sont seuls compétents.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- RGPD -->
+    <div class="mentions-block">
+      <h2>4. Protection des données personnelles (RGPD)</h2>
+      <p class="mentions-text">Conformément au Règlement (UE) 2016/679 (RGPD) et à la loi belge du 30 juillet 2018, Diam-Tech Béton s'engage à protéger la vie privée de ses utilisateurs.</p>
+      <p class="mentions-text"><strong>Données collectées :</strong> Via le formulaire de devis — prénom, nom, téléphone, email, type de prestation, description du chantier. Finalité : traitement des demandes et suivi commercial uniquement. Aucune cession à des tiers. Conservation : 3 ans maximum.</p>
+      <p class="mentions-text"><strong>Service tiers :</strong> Le formulaire utilise Formspree (formspree.io) soumis à sa propre politique de confidentialité.</p>
+      <div class="droits-grid">
+        <div class="droit-item"><span class="droit-icon">A</span><h4>Accès</h4><p>Droit d'accéder à vos données personnelles détenues par Diam-Tech Béton.</p></div>
+        <div class="droit-item"><span class="droit-icon">R</span><h4>Rectification</h4><p>Droit de corriger des données inexactes ou incomplètes vous concernant.</p></div>
+        <div class="droit-item"><span class="droit-icon">E</span><h4>Effacement</h4><p>Droit à l'oubli — demande de suppression de vos données personnelles.</p></div>
+        <div class="droit-item"><span class="droit-icon">L</span><h4>Limitation</h4><p>Droit de limiter le traitement de vos données dans certaines circonstances.</p></div>
+        <div class="droit-item"><span class="droit-icon">P</span><h4>Portabilité</h4><p>Droit de recevoir vos données dans un format structuré et lisible.</p></div>
+        <div class="droit-item"><span class="droit-icon">O</span><h4>Opposition</h4><p>Droit de vous opposer au traitement de vos données personnelles.</p></div>
+      </div>
+      <p class="mentions-text" style="margin-top:24px;">Pour exercer ces droits : <strong>info@diam-tech-beton.be</strong> — Autorité de contrôle : APD — Rue de la Presse 35, 1000 Bruxelles — www.autoriteprotectiondonnees.be</p>
+    </div>
+
+    <!-- COOKIES & PROPRIÉTÉ -->
+    <div class="mentions-block">
+      <h2>5. Cookies &amp; Propriété intellectuelle</h2>
+      <p class="mentions-text"><strong>Cookies :</strong> Ce site utilise uniquement des cookies fonctionnels strictement nécessaires à son bon fonctionnement. Aucun cookie de tracking, publicité ou analyse comportementale n'est utilisé. Aucun consentement préalable n'est requis pour ces cookies techniques.</p>
+      <p class="mentions-text"><strong>Propriété intellectuelle :</strong> L'ensemble du contenu de ce site (textes, visuels, logo, structure) est la propriété exclusive de Diam-Tech Béton. Toute reproduction sans autorisation écrite préalable est interdite et constituerait une contrefaçon sanctionnée par le droit belge.</p>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>TVA: BE 1035.597.041 — RPM Liège — www.diam-tech-beton.be</p>
+    <span>Diam-Tech Béton © 2026</span>
+  </footer>
+</div>
+
+<script>
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
+  document.querySelectorAll('.nav-links a').forEach(function(a) { a.classList.remove('active'); });
+  document.getElementById('page-' + id).classList.add('active');
+  document.getElementById('nav-' + id).classList.add('active');
+  window.scrollTo(0, 0);
+}
+</script>
+</body>
+</html>
