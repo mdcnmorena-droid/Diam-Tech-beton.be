@@ -301,6 +301,15 @@ footer { background: #0a0a0a; padding: 24px 80px; display: flex; align-items: ce
 footer p { font-size: 0.68rem; font-weight: 300; color: var(--gris-moyen); }
 footer span { font-size: 0.62rem; font-weight: 600; color: rgba(192,32,42,0.5); letter-spacing: 0.1em; text-transform: uppercase; }
 </style>
+<script>
+function showPage(id) {
+  document.querySelectorAll(".page").forEach(function(p) { p.classList.remove("active"); });
+  document.querySelectorAll(".nav-links a").forEach(function(a) { a.classList.remove("active"); });
+  document.getElementById("page-" + id).classList.add("active");
+  document.getElementById("nav-" + id).classList.add("active");
+  window.scrollTo(0, 0);
+}
+</script>
 </head>
 <body>
 
