@@ -17,12 +17,13 @@
   --blanc: #ffffff;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { overflow-x: hidden; width: 100%; }
 body { font-family: 'Montserrat', sans-serif; background: var(--noir); color: var(--blanc); }
 
 /* ─── NAV ─── */
 nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 48px; height: 72px; background: rgba(17,17,17,0.97); border-bottom: 1px solid rgba(192,32,42,0.3); backdrop-filter: blur(8px); }
 .nav-logo { display: flex; align-items: center; cursor: pointer; }
-.nav-logo svg { height: 56px; width: auto; }
+.nav-logo svg { height: 72px; width: auto; }
 .nav-links { display: flex; gap: 36px; list-style: none; }
 .nav-links a { color: var(--gris-clair); text-decoration: none; font-weight: 600; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; transition: color 0.2s; position: relative; padding-bottom: 4px; }
 .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--rouge); transition: width 0.3s; }
@@ -33,105 +34,74 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; a
 .call-btn-mobile { display: none; position: fixed; bottom: 24px; right: 24px; z-index: 200; background: var(--rouge); color: var(--blanc); width: 60px; height: 60px; border-radius: 50%; text-decoration: none; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(192,32,42,0.5); transition: transform 0.2s, background 0.2s; }
 .call-btn-mobile:hover { background: var(--rouge-vif); transform: scale(1.05); }
 @media (max-width: 768px) {
-  /* ── NAV ── */
-  nav { padding: 0 16px; height: 60px; }
-  .nav-links { gap: 10px; }
-  .nav-links a { font-size: 0.52rem; letter-spacing: 0.05em; }
-  .nav-logo svg { height: 40px; }
-
-  /* ── HERO ── */
-  .hero { height: auto; padding: 72px 0 48px; }
+  nav { padding: 0 20px; height: 64px; }
+  .nav-links { gap: 12px; }
+  .nav-links a { font-size: 0.55rem; letter-spacing: 0.06em; }
+  .nav-logo svg { height: 58px; }
+  .hero { height: auto; padding: 60px 0 40px; }
   .hero-content { padding: 0 24px; }
-  .hero-title { font-size: 2.8rem; line-height: 1; }
-  .hero-sub { font-size: 0.85rem; }
-  .hero-ctas { flex-direction: column; align-items: stretch; gap: 12px; }
-  .btn-primary, .btn-outline { width: 100%; text-align: center; padding: 16px 20px; }
-
-  /* ── ATOUTS — 1 colonne ── */
-  .atouts { grid-template-columns: 1fr; }
-  .atout { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); padding: 36px 24px; }
+  .hero-title { font-size: 2.6rem; line-height: 1.05; }
+  .hero-sub { font-size: 0.84rem; }
+  .hero-ctas { flex-direction: column; align-items: center; gap: 12px; }
+  .btn-primary, .btn-outline { width: 100%; text-align: center; padding: 14px 20px; }
+  .atouts { grid-template-columns: 1fr !important; }
+  .atout { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); padding: 32px 24px; }
   .atout:last-child { border-bottom: none; }
-
-  /* ── POURQUOI — 2 colonnes équilibrées ── */
-  .pourquoi-grid { grid-template-columns: 1fr 1fr !important; }
-  .pourquoi-card { padding: 24px 16px; }
-  .pourquoi-card h3 { font-size: 0.72rem; }
-  .pourquoi-card p { font-size: 0.75rem; line-height: 1.6; }
-  .pourquoi-card .pourquoi-icon { width: 36px; height: 36px; margin-bottom: 14px; }
-
-  /* ── CLIENTS — 1 colonne ── */
-  .clients-section { grid-template-columns: 1fr; }
+  .clients-section { grid-template-columns: 1fr !important; }
   .client-block { padding: 36px 24px; }
   .client-block:first-child { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
-
-  /* ── MATÉRIAUX — 2 colonnes ── */
-  .materiaux-grid { grid-template-columns: 1fr 1fr !important; }
-  .materiau-card { padding: 24px 16px; }
-  .materiau-card h3 { font-size: 0.75rem; }
-  .materiau-card p { font-size: 0.72rem; }
-
-  /* ── STATS — 2 colonnes ── */
-  .infos-rapides { grid-template-columns: 1fr 1fr !important; }
+  .infos-rapides { grid-template-columns: repeat(2, 1fr); }
   .info-item { padding: 24px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); }
-  .info-val { font-size: 1.6rem; }
-
-  /* ── ZONE ── */
-  .zone-section { grid-template-columns: 1fr !important; padding: 48px 24px; gap: 40px; }
-  .zone-list { grid-template-columns: 1fr !important; }
-
-  /* ── PAGE HEADER ── */
   .page-header { padding: 48px 24px 36px; }
   .page-header h1 { font-size: 2rem; }
   .page-header p { font-size: 0.82rem; }
-
-  /* ── SERVICES — 1 colonne ── */
-  .services-grid { grid-template-columns: 1fr !important; gap: 2px; }
-  .service-card { padding: 36px 24px; }
-  .service-card-full { grid-column: 1 !important; grid-template-columns: 1fr !important; gap: 24px; }
-  .service-explainer { padding: 24px; }
-
-  /* ── APPLICATIONS ── */
+  .services-grid { grid-template-columns: 1fr; gap: 2px; }
+  .service-card { padding: 32px 24px; }
+  .service-card-full { grid-column: 1; grid-template-columns: 1fr; gap: 20px; }
   .applications-section { padding: 48px 24px; }
-  .appli-grid { grid-template-columns: 1fr !important; }
-
-  /* ── GUIDE ── */
+  .appli-grid { grid-template-columns: 1fr; }
   .guide-section { padding: 48px 24px; }
-  .diametre-table { font-size: 0.7rem; }
-  .diametre-table thead th { padding: 10px 6px; font-size: 0.56rem; }
-  .diametre-table tbody td { padding: 12px 6px; }
-  .methodes-grid { grid-template-columns: 1fr !important; }
+  .diametre-table { font-size: 0.72rem; }
+  .diametre-table thead th { padding: 10px 8px; font-size: 0.58rem; }
+  .diametre-table tbody td { padding: 12px 8px; }
+  .methodes-grid { grid-template-columns: 1fr; }
   .methode-card { padding: 28px 24px; }
-  .orientations-grid { grid-template-columns: 1fr !important; }
-  .orient-card { padding: 24px; }
-
-  /* ── CERTIF ── */
+  .orientations-grid { grid-template-columns: 1fr; }
+  .orient-card { padding: 28px 24px; }
   .certif-strip { padding: 36px 24px; flex-direction: column; gap: 20px; }
-
-  /* ── FAQ ── */
-  .faq-grid { grid-template-columns: 1fr !important; }
-  .faq-item { padding: 28px 24px; }
-  .faq-section { padding: 48px 24px; }
-
-  /* ── CONTACT — 1 colonne ── */
-  .contact-layout { grid-template-columns: 1fr !important; min-height: auto; }
+  .contact-layout { grid-template-columns: 1fr; min-height: auto; }
   .contact-left { padding: 48px 24px 36px; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
   .contact-right { padding: 36px 24px 48px; }
-  .form-row { grid-template-columns: 1fr !important; gap: 0; }
-  .contact-right h3 { font-size: 0.58rem; margin-bottom: 24px; }
-
-  /* ── MENTIONS ── */
-  .mentions-grid { grid-template-columns: 1fr !important; }
-  .mentions-block { padding: 28px 24px; }
-  .droits-grid { grid-template-columns: 1fr !important; }
-  .conformite-grid { grid-template-columns: 1fr !important; }
-
-  /* ── FOOTER ── */
+  .form-row { grid-template-columns: 1fr; gap: 0; }
   footer { padding: 20px 24px; flex-direction: column; gap: 6px; text-align: center; }
   .section-title { font-size: 1.4rem; }
-  .section-sub { font-size: 0.8rem; }
 
-  /* ── BOUTON APPEL ── */
-  .call-btn-mobile { display: flex; }
+  /* Pourquoi nous choisir — 1 colonne */
+  .pourquoi-grid { grid-template-columns: 1fr !important; }
+  .pourquoi-card { padding: 32px 24px; }
+
+  /* Matériaux — 2 colonnes */
+  .materiaux-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .materiau-card { padding: 24px 20px; }
+
+  /* Zone intervention — 1 colonne */
+  .zone-section { display: block !important; padding: 48px 24px; }
+  .zone-list { grid-template-columns: 1fr 1fr !important; margin-top: 24px; }
+  .zone-intro { margin-bottom: 32px; }
+
+  /* FAQ */
+  .faq-grid { grid-template-columns: 1fr !important; }
+  .faq-section { padding: 48px 24px; }
+
+  /* Mentions */
+  .mentions-grid { grid-template-columns: 1fr !important; }
+  .droits-grid { grid-template-columns: 1fr !important; }
+  .conformite-grid { grid-template-columns: 1fr !important; }
+  .mentions-section { padding: 48px 24px; }
+
+  /* Padding général sections */
+  .pourquoi-section { padding: 48px 24px; }
+  .materiaux-section { padding: 48px 24px; }
 }
 
 /* ─── PAGES ─── */
@@ -361,12 +331,29 @@ footer span { font-size: 0.62rem; font-weight: 600; color: rgba(192,32,42,0.5); 
 </style>
 <script>
 function showPage(id) {
-  document.querySelectorAll(".page").forEach(function(p) { p.classList.remove("active"); });
-  document.querySelectorAll(".nav-links a").forEach(function(a) { a.classList.remove("active"); });
-  document.getElementById("page-" + id).classList.add("active");
-  document.getElementById("nav-" + id).classList.add("active");
+  var pages = document.querySelectorAll('.page');
+  for (var i = 0; i < pages.length; i++) { pages[i].classList.remove('active'); }
+  var links = document.querySelectorAll('.nav-links a');
+  for (var i = 0; i < links.length; i++) { links[i].classList.remove('active'); }
+  var page = document.getElementById('page-' + id);
+  var nav = document.getElementById('nav-' + id);
+  if (page) page.classList.add('active');
+  if (nav) nav.classList.add('active');
   window.scrollTo(0, 0);
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  var allLinks = document.querySelectorAll('[data-page], [data-goto]');
+  for (var i = 0; i < allLinks.length; i++) {
+    allLinks[i].addEventListener('click', function(e) {
+      e.preventDefault();
+      var target = this.getAttribute('data-page') || this.getAttribute('data-goto');
+      showPage(target);
+    });
+  }
+  var logo = document.querySelector('.nav-logo');
+  if (logo) logo.addEventListener('click', function() { showPage('accueil'); });
+});
 </script>
 </head>
 <body>
@@ -380,19 +367,38 @@ function showPage(id) {
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo" onclick="showPage('accueil')">
+  <div class="nav-logo" >
     <svg viewBox="0 0 252 144" xmlns="http://www.w3.org/2000/svg">
-      <text fill="#c2c2c3" font-family="Montserrat, sans-serif" font-size="21.85" font-style="italic" font-weight="900" letter-spacing="3" transform="translate(93.04 65.28)">DIAM-TECH</text>
-      <text fill="#c2c2c3" font-family="Montserrat, sans-serif" font-size="21.85" font-style="italic" font-weight="900" letter-spacing="3" transform="translate(120.56 86.82)">BÉTON</text>
-      <text fill="#7c7c7b" font-family="Montserrat, sans-serif" font-size="6.85" letter-spacing="2" transform="translate(95.54 99.64)">CAROTTAGE DE PRÉCISION</text>
-      <path fill="#a11916" d="M73.96,53.44l-6.72-7.81H27.16s-14.27,16.72-14.27,16.72l10.03,11.97,14.24,16.8,9.92,11.73c.25.3.41.58.76.55.31-.02.38-.17.73-.59l33.13-40.38-7.72-8.99ZM77.1,60.92c-1.12.18-2.16-.03-3.51.04l-2.86-7.26,6.36,7.22ZM70.94,60.93l-7.34.03,3.49-9.82,3.85,9.79ZM65.09,48.45c-.5,2.01-1.27,3.89-1.97,5.86l-1.78,5.32-10.83-11.2,14.58.02ZM57.8,61h-22.27s11.19-11.68,11.19-11.68l11.08,11.68ZM32.97,48.82l10.75.05-10.48,11.06-4.08-11.11h3.8ZM27.23,51.08l3.68,9.88-7.32.02,3.64-9.9ZM23.83,53.27l-2.72,7.67c-1.37.07-2.5.11-3.7.02l6.41-7.68ZM17.22,63.75l3.91-.07,5.07,10.49-8.99-10.43ZM32.52,81.56l-8.61-17.69,8.06.02,10.33,27.03c.6,1.5,1.21,2.64,1.51,4.09l-11.29-13.45ZM47.98,97.35c-.49-.08-.46-.57-.74-.96l-12.34-32.54,25.11.05-12.03,33.45ZM62.51,81.56l-10.81,13.38,11.18-31.04,7.91.02-6.14,13c-.74,1.57-1.12,3.38-2.14,4.65ZM68.64,74.5c1.51-3.69,3.25-6.74,4.78-10.59,1.25-.18,2.46-.15,3.67-.06l-8.45,10.65Z"/>
+      <defs><style>.cls-2{fill:#c2c2c3}.cls-3{fill:#a11916}</style></defs>
+      
+      <g>
+        <g>
+          <path class="cls-2" d="M99.38,47.47h6.91c4.83,0,7.8,2.47,7.8,6.49,0,5.4-4,8.81-9.57,8.81h-8.19l3.06-15.3ZM104.69,58.74c2.73,0,4.2-1.97,4.2-4.48,0-1.77-1.11-2.77-3.19-2.77h-1.97l-1.44,7.25h2.4Z"/>
+          <path class="cls-2" d="M117.97,47.47h5.16l-3.06,15.3h-5.16l3.06-15.3Z"/>
+          <path class="cls-2" d="M134.25,60.1h-5.83l-1.53,2.67h-5.44l9.75-15.3h5.07l3.63,15.3h-5.13l-.5-2.67ZM133.53,56.38l-.74-3.91-2.25,3.91h2.99Z"/>
+          <path class="cls-2" d="M162.64,47.47l-3.01,15.3h-4.7l1.35-6.97-4.3,5.59h-2.27l-2.36-5.51-1.38,6.88h-4.7l3.06-15.3h4.2l3.32,8.13,6.4-8.13h4.39Z"/>
+          <path class="cls-2" d="M164.03,54.59h6.56l-.74,3.71h-6.55l.74-3.71Z"/>
+          <path class="cls-2" d="M176.42,51.47h-4.48l.81-4h14.12l-.81,4h-4.48l-2.25,11.3h-5.16l2.25-11.3Z"/>
+          <path class="cls-2" d="M193.03,51.36l-.35,1.79h6.47l-.74,3.71h-6.49l-.39,2.01h7.67l-.79,3.89h-12.72l3.06-15.3h12.43l-.79,3.89h-7.36Z"/>
+          <path class="cls-2" d="M201.79,56.27c0-5.38,4-9.16,9.66-9.16,2.93,0,5.33,1.09,6.45,3.06l-3.71,2.91c-.66-1.14-1.66-1.79-3.06-1.79-2.42,0-4.13,1.92-4.13,4.65,0,1.79,1.25,2.99,3.15,2.99,1.2,0,2.36-.5,3.41-1.77l3.04,2.91c-1.86,2.27-4.13,3.04-6.95,3.04-4.74,0-7.84-2.77-7.84-6.84Z"/>
+          <path class="cls-2" d="M235.88,47.47l-3.06,15.3h-5.16l1.14-5.64h-4.76l-1.14,5.64h-5.16l3.06-15.3h5.16l-1.09,5.42h4.76l1.09-5.42h5.16Z"/>
+        </g>
+        <g>
+          <path class="cls-2" d="M139.81,80.43c0,3.39-3.23,4.87-7.15,4.87h-8.83l3.06-15.3h8.11c3.63,0,5.48,1.33,5.48,3.65,0,1.77-1.05,3.06-2.73,3.78,1.31.57,2.05,1.6,2.05,2.99ZM134.7,80.3c0-.68-.59-1-1.27-1h-3.32l-.48,2.4h3.32c1,0,1.75-.46,1.75-1.4ZM131.25,73.61l-.46,2.27h2.62c1.18,0,1.7-.5,1.7-1.33,0-.63-.5-.94-1.35-.94h-2.51Z"/>
+          <path class="cls-2" d="M148.62,73.89l-.35,1.79h6.47l-.74,3.71h-6.49l-.39,2.01h7.67l-.79,3.89h-12.72l3.06-15.3h12.43l-.79,3.89h-7.36ZM151.85,68.76h-3.41l3.28-3.5h4.83l-4.7,3.5Z"/>
+          <path class="cls-2" d="M162.1,74h-4.48l.81-4h14.12l-.81,4h-4.48l-2.25,11.3h-5.16l2.25-11.3Z"/>
+          <path class="cls-2" d="M172,78.81c0-5.4,4.02-9.16,9.64-9.16,4.76,0,7.76,2.82,7.76,6.84,0,5.4-4.02,9.16-9.64,9.16-4.76,0-7.76-2.82-7.76-6.84ZM184.19,76.8c0-1.77-1.11-2.97-2.99-2.97-2.53,0-4,2.16-4,4.68,0,1.77,1.11,2.97,2.99,2.97,2.54,0,4-2.16,4-4.68Z"/>
+          <path class="cls-2" d="M208.36,70.01l-3.06,15.3h-4.24l-4.39-7.12-1.42,7.12h-5.03l3.06-15.3h4.24l4.39,7.12,1.42-7.12h5.03Z"/>
+        </g>
+        <path class="cls-3" d="M77.2,50.92l-6.72-7.81H30.39s-14.27,16.72-14.27,16.72l10.03,11.97,14.24,16.8,9.92,11.73c.25.3.41.58.76.55.31-.02.38-.17.73-.59l33.13-40.38-7.72-8.99ZM80.34,58.4c-1.12.18-2.16-.03-3.51.04l-2.86-7.26,6.36,7.22ZM74.18,58.41l-7.34.03,3.49-9.82,3.85,9.79ZM68.33,45.93c-.5,2.01-1.27,3.89-1.97,5.86l-1.78,5.32-10.83-11.2,14.58.02ZM61.04,58.48h-22.27s11.19-11.68,11.19-11.68l11.08,11.68ZM36.21,46.31l10.75.05-10.48,11.06-4.08-11.11h3.8ZM30.46,48.56l3.68,9.88-7.32.02,3.64-9.9ZM27.07,50.75l-2.72,7.67c-1.37.07-2.5.11-3.7.02l6.41-7.68ZM20.46,61.23l3.91-.07,5.07,10.49-8.99-10.43ZM35.76,79.05l-8.61-17.69,8.06.02,10.33,27.03c.6,1.5,1.21,2.64,1.51,4.09l-11.29-13.45ZM51.22,94.84c-.49-.08-.46-.57-.74-.96l-12.34-32.54,25.11.05-12.03,33.45ZM65.75,79.04l-10.81,13.38,11.18-31.04,7.91.02-6.14,13c-.74,1.57-1.12,3.38-2.14,4.65ZM71.88,71.98c1.51-3.69,3.25-6.74,4.78-10.59,1.25-.18,2.46-.15,3.67-.06l-8.45,10.65Z"/>
+      </g>
     </svg>
   </div>
   <ul class="nav-links">
-    <li><a href="#" id="nav-accueil" class="active" onclick="showPage('accueil'); return false;">Accueil</a></li>
-    <li><a href="#" id="nav-carottage" onclick="showPage('carottage'); return false;">Carottage</a></li>
-    <li><a href="#" id="nav-contact" onclick="showPage('contact'); return false;">Contact</a></li>
-    <li><a href="#" id="nav-mentions" onclick="showPage('mentions'); return false;">Mentions légales</a></li>
+    <li><a href="#" id="nav-accueil" class="active" data-page="accueil">Accueil</a></li>
+    <li><a href="#" id="nav-carottage" data-page="carottage">Carottage</a></li>
+    <li><a href="#" id="nav-contact" data-page="contact">Contact</a></li>
+    <li><a href="#" id="nav-mentions" data-page="mentions">Mentions légales</a></li>
   </ul>
 </nav>
 
@@ -402,11 +408,11 @@ function showPage(id) {
   <section class="hero">
     <div class="hero-content">
       <div class="hero-tag">Belgium — Liège — Certifié VCA</div>
-      <h1 class="hero-title">Precision<br><em>dans le béton.</em></h1>
+      <h1 class="hero-title">Précision<br><em>dans le béton.</em></h1>
       <p class="hero-sub">Spécialistes du carottage de précision en Belgique. Interventions rapides, résultats propres, zone de travail maîtrisée.</p>
       <div class="hero-ctas">
-        <a href="#" class="btn-primary" onclick="showPage('carottage'); return false;">Nos prestations</a>
-        <a href="#" class="btn-outline" onclick="showPage('contact'); return false;">Demander un devis</a>
+        <a href="#" class="btn-primary" data-page="carottage">Nos prestations</a>
+        <a href="#" class="btn-outline" data-page="contact">Demander un devis</a>
       </div>
     </div>
   </section>
@@ -993,7 +999,7 @@ function showPage(id) {
         <div class="mentions-item"><span class="label">Hébergeur</span><span class="value">Combell NV</span></div>
         <div class="mentions-item"><span class="label">Adresse</span><span class="value">Skaldenstraat 121, 9042 Gent, Belgique</span></div>
         <div class="mentions-item"><span class="label">Site web</span><span class="value">www.combell.com</span></div>
-        <div class="mentions-item"><span class="label">Design</span><span class="value">DOUBLE M — Morena Mendicino, graphiste, Liège</span></div>
+        <div class="mentions-item"><span class="label">Design</span><span class="value">DOUBLE/M — Morena Mendicino, graphiste, Liège</span></div>
       </div>
     </div>
 
@@ -1056,12 +1062,29 @@ function showPage(id) {
 
 <script>
 function showPage(id) {
-  document.querySelectorAll(".page").forEach(function(p) { p.classList.remove("active"); });
-  document.querySelectorAll(".nav-links a").forEach(function(a) { a.classList.remove("active"); });
-  document.getElementById("page-" + id).classList.add("active");
-  document.getElementById("nav-" + id).classList.add("active");
+  var pages = document.querySelectorAll('.page');
+  for (var i = 0; i < pages.length; i++) { pages[i].classList.remove('active'); }
+  var links = document.querySelectorAll('.nav-links a');
+  for (var i = 0; i < links.length; i++) { links[i].classList.remove('active'); }
+  var page = document.getElementById('page-' + id);
+  var nav = document.getElementById('nav-' + id);
+  if (page) page.classList.add('active');
+  if (nav) nav.classList.add('active');
   window.scrollTo(0, 0);
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  var allLinks = document.querySelectorAll('[data-page], [data-goto]');
+  for (var i = 0; i < allLinks.length; i++) {
+    allLinks[i].addEventListener('click', function(e) {
+      e.preventDefault();
+      var target = this.getAttribute('data-page') || this.getAttribute('data-goto');
+      showPage(target);
+    });
+  }
+  var logo = document.querySelector('.nav-logo');
+  if (logo) logo.addEventListener('click', function() { showPage('accueil'); });
+});
 </script>
 </body>
 </html>
