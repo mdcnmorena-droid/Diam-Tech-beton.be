@@ -33,76 +33,104 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; a
 .call-btn-mobile { display: none; position: fixed; bottom: 24px; right: 24px; z-index: 200; background: var(--rouge); color: var(--blanc); width: 60px; height: 60px; border-radius: 50%; text-decoration: none; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(192,32,42,0.5); transition: transform 0.2s, background 0.2s; }
 .call-btn-mobile:hover { background: var(--rouge-vif); transform: scale(1.05); }
 @media (max-width: 768px) {
-  nav { padding: 0 20px; height: 64px; }
-  .nav-links { gap: 12px; }
-  .nav-links a { font-size: 0.55rem; letter-spacing: 0.06em; }
-  .nav-logo svg { height: 44px; }
-  .hero { height: auto; padding: 60px 0 40px; }
+  /* ── NAV ── */
+  nav { padding: 0 16px; height: 60px; }
+  .nav-links { gap: 10px; }
+  .nav-links a { font-size: 0.52rem; letter-spacing: 0.05em; }
+  .nav-logo svg { height: 40px; }
+
+  /* ── HERO ── */
+  .hero { height: auto; padding: 72px 0 48px; }
   .hero-content { padding: 0 24px; }
-  .hero-title { font-size: 2.6rem; line-height: 1.05; }
-  .hero-sub { font-size: 0.84rem; }
-  .hero-ctas { flex-direction: column; align-items: center; gap: 12px; }
-  .btn-primary, .btn-outline { width: 100%; text-align: center; padding: 14px 20px; }
+  .hero-title { font-size: 2.8rem; line-height: 1; }
+  .hero-sub { font-size: 0.85rem; }
+  .hero-ctas { flex-direction: column; align-items: stretch; gap: 12px; }
+  .btn-primary, .btn-outline { width: 100%; text-align: center; padding: 16px 20px; }
+
+  /* ── ATOUTS — 1 colonne ── */
   .atouts { grid-template-columns: 1fr; }
-  .atout { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); padding: 32px 24px; }
+  .atout { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); padding: 36px 24px; }
   .atout:last-child { border-bottom: none; }
+
+  /* ── POURQUOI — 2 colonnes équilibrées ── */
+  .pourquoi-grid { grid-template-columns: 1fr 1fr !important; }
+  .pourquoi-card { padding: 24px 16px; }
+  .pourquoi-card h3 { font-size: 0.72rem; }
+  .pourquoi-card p { font-size: 0.75rem; line-height: 1.6; }
+  .pourquoi-card .pourquoi-icon { width: 36px; height: 36px; margin-bottom: 14px; }
+
+  /* ── CLIENTS — 1 colonne ── */
   .clients-section { grid-template-columns: 1fr; }
   .client-block { padding: 36px 24px; }
   .client-block:first-child { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
-  .infos-rapides { grid-template-columns: repeat(2, 1fr); }
+
+  /* ── MATÉRIAUX — 2 colonnes ── */
+  .materiaux-grid { grid-template-columns: 1fr 1fr !important; }
+  .materiau-card { padding: 24px 16px; }
+  .materiau-card h3 { font-size: 0.75rem; }
+  .materiau-card p { font-size: 0.72rem; }
+
+  /* ── STATS — 2 colonnes ── */
+  .infos-rapides { grid-template-columns: 1fr 1fr !important; }
   .info-item { padding: 24px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); }
+  .info-val { font-size: 1.6rem; }
+
+  /* ── ZONE ── */
+  .zone-section { grid-template-columns: 1fr !important; padding: 48px 24px; gap: 40px; }
+  .zone-list { grid-template-columns: 1fr !important; }
+
+  /* ── PAGE HEADER ── */
   .page-header { padding: 48px 24px 36px; }
   .page-header h1 { font-size: 2rem; }
   .page-header p { font-size: 0.82rem; }
-  .services-grid { grid-template-columns: 1fr; gap: 2px; }
-  .service-card { padding: 32px 24px; }
-  .service-card-full { grid-column: 1; grid-template-columns: 1fr; gap: 20px; }
+
+  /* ── SERVICES — 1 colonne ── */
+  .services-grid { grid-template-columns: 1fr !important; gap: 2px; }
+  .service-card { padding: 36px 24px; }
+  .service-card-full { grid-column: 1 !important; grid-template-columns: 1fr !important; gap: 24px; }
+  .service-explainer { padding: 24px; }
+
+  /* ── APPLICATIONS ── */
   .applications-section { padding: 48px 24px; }
-  .appli-grid { grid-template-columns: 1fr; }
+  .appli-grid { grid-template-columns: 1fr !important; }
+
+  /* ── GUIDE ── */
   .guide-section { padding: 48px 24px; }
-  .diametre-table { font-size: 0.72rem; }
-  .diametre-table thead th { padding: 10px 8px; font-size: 0.58rem; }
-  .diametre-table tbody td { padding: 12px 8px; }
-  .methodes-grid { grid-template-columns: 1fr; }
+  .diametre-table { font-size: 0.7rem; }
+  .diametre-table thead th { padding: 10px 6px; font-size: 0.56rem; }
+  .diametre-table tbody td { padding: 12px 6px; }
+  .methodes-grid { grid-template-columns: 1fr !important; }
   .methode-card { padding: 28px 24px; }
-  .orientations-grid { grid-template-columns: 1fr; }
-  .orient-card { padding: 28px 24px; }
+  .orientations-grid { grid-template-columns: 1fr !important; }
+  .orient-card { padding: 24px; }
+
+  /* ── CERTIF ── */
   .certif-strip { padding: 36px 24px; flex-direction: column; gap: 20px; }
-  .contact-layout { grid-template-columns: 1fr; min-height: auto; }
-  .contact-left { padding: 48px 24px 36px; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
-  .contact-right { padding: 36px 24px 48px; }
-  .form-row { grid-template-columns: 1fr; gap: 0; }
-  footer { padding: 20px 24px; flex-direction: column; gap: 6px; text-align: center; }
-  .section-title { font-size: 1.5rem; }
 
-  /* Grilles spécifiques manquantes */
-  .pourquoi-grid { grid-template-columns: 1fr 1fr !important; }
-  .pourquoi-card { padding: 28px 20px; }
-  .pourquoi-card h3 { font-size: 0.78rem; }
-  .pourquoi-card p { font-size: 0.78rem; }
-
-  .materiaux-grid { grid-template-columns: repeat(2, 1fr) !important; }
-  .materiau-card { padding: 24px 20px; }
-
+  /* ── FAQ ── */
   .faq-grid { grid-template-columns: 1fr !important; }
   .faq-item { padding: 28px 24px; }
-
-  .zone-grid { grid-template-columns: 1fr !important; }
-
-  .pourquoi-section { padding: 48px 24px; }
-  .materiaux-section { padding: 48px 24px; }
   .faq-section { padding: 48px 24px; }
-  .zone-section { padding: 48px 24px; }
 
-  /* Contact formulaire pleine largeur */
-  .contact-right h3 { font-size: 0.6rem; }
-  .form-group input, .form-group textarea, .form-group select { font-size: 0.82rem; }
+  /* ── CONTACT — 1 colonne ── */
+  .contact-layout { grid-template-columns: 1fr !important; min-height: auto; }
+  .contact-left { padding: 48px 24px 36px; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .contact-right { padding: 36px 24px 48px; }
+  .form-row { grid-template-columns: 1fr !important; gap: 0; }
+  .contact-right h3 { font-size: 0.58rem; margin-bottom: 24px; }
 
-  /* Mentions légales */
+  /* ── MENTIONS ── */
   .mentions-grid { grid-template-columns: 1fr !important; }
   .mentions-block { padding: 28px 24px; }
+  .droits-grid { grid-template-columns: 1fr !important; }
+  .conformite-grid { grid-template-columns: 1fr !important; }
 
-  /* Bouton appel mobile visible */
+  /* ── FOOTER ── */
+  footer { padding: 20px 24px; flex-direction: column; gap: 6px; text-align: center; }
+  .section-title { font-size: 1.4rem; }
+  .section-sub { font-size: 0.8rem; }
+
+  /* ── BOUTON APPEL ── */
   .call-btn-mobile { display: flex; }
 }
 
@@ -965,7 +993,7 @@ function showPage(id) {
         <div class="mentions-item"><span class="label">Hébergeur</span><span class="value">Combell NV</span></div>
         <div class="mentions-item"><span class="label">Adresse</span><span class="value">Skaldenstraat 121, 9042 Gent, Belgique</span></div>
         <div class="mentions-item"><span class="label">Site web</span><span class="value">www.combell.com</span></div>
-        <div class="mentions-item"><span class="label">Design</span><span class="value">DOUBLE/M — Morena Mendicino, graphiste, Liège</span></div>
+        <div class="mentions-item"><span class="label">Design</span><span class="value">DOUBLE M — Morena Mendicino, graphiste, Liège</span></div>
       </div>
     </div>
 
