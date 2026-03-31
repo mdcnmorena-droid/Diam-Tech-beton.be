@@ -32,7 +32,49 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; a
 /* Bouton appel mobile fixe */
 .call-btn-mobile { display: none; position: fixed; bottom: 24px; right: 24px; z-index: 200; background: var(--rouge); color: var(--blanc); width: 60px; height: 60px; border-radius: 50%; text-decoration: none; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(192,32,42,0.5); transition: transform 0.2s, background 0.2s; }
 .call-btn-mobile:hover { background: var(--rouge-vif); transform: scale(1.05); }
-@media (max-width: 768px) { .call-btn-mobile { display: flex; } .nav-links { gap: 16px; } .nav-links a { font-size: 0.6rem; } nav { padding: 0 20px; } }
+@media (max-width: 768px) {
+  nav { padding: 0 20px; height: 64px; }
+  .nav-links { gap: 12px; }
+  .nav-links a { font-size: 0.55rem; letter-spacing: 0.06em; }
+  .nav-logo svg { height: 44px; }
+  .hero { height: auto; padding: 60px 0 40px; }
+  .hero-content { padding: 0 24px; }
+  .hero-title { font-size: 2.6rem; line-height: 1.05; }
+  .hero-sub { font-size: 0.84rem; }
+  .hero-ctas { flex-direction: column; align-items: center; gap: 12px; }
+  .btn-primary, .btn-outline { width: 100%; text-align: center; padding: 14px 20px; }
+  .atouts { grid-template-columns: 1fr; }
+  .atout { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); padding: 32px 24px; }
+  .atout:last-child { border-bottom: none; }
+  .clients-section { grid-template-columns: 1fr; }
+  .client-block { padding: 36px 24px; }
+  .client-block:first-child { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .infos-rapides { grid-template-columns: repeat(2, 1fr); }
+  .info-item { padding: 24px 16px; border-bottom: 1px solid rgba(255,255,255,0.15); }
+  .page-header { padding: 48px 24px 36px; }
+  .page-header h1 { font-size: 2rem; }
+  .page-header p { font-size: 0.82rem; }
+  .services-grid { grid-template-columns: 1fr; gap: 2px; }
+  .service-card { padding: 32px 24px; }
+  .service-card-full { grid-column: 1; grid-template-columns: 1fr; gap: 20px; }
+  .applications-section { padding: 48px 24px; }
+  .appli-grid { grid-template-columns: 1fr; }
+  .guide-section { padding: 48px 24px; }
+  .diametre-table { font-size: 0.72rem; }
+  .diametre-table thead th { padding: 10px 8px; font-size: 0.58rem; }
+  .diametre-table tbody td { padding: 12px 8px; }
+  .methodes-grid { grid-template-columns: 1fr; }
+  .methode-card { padding: 28px 24px; }
+  .orientations-grid { grid-template-columns: 1fr; }
+  .orient-card { padding: 28px 24px; }
+  .certif-strip { padding: 36px 24px; flex-direction: column; gap: 20px; }
+  .contact-layout { grid-template-columns: 1fr; min-height: auto; }
+  .contact-left { padding: 48px 24px 36px; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .contact-right { padding: 36px 24px 48px; }
+  .form-row { grid-template-columns: 1fr; gap: 0; }
+  footer { padding: 20px 24px; flex-direction: column; gap: 6px; text-align: center; }
+  .section-title { font-size: 1.5rem; }
+}
 
 /* ─── PAGES ─── */
 .page { display: none; min-height: 100vh; padding-top: 72px; animation: fadeIn 0.4s ease; }
@@ -787,7 +829,7 @@ footer span { font-size: 0.62rem; font-weight: 600; color: rgba(192,32,42,0.5); 
           <div class="contact-ligne-icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           </div>
-          <div class="contact-ligne-text"><strong>Email</strong><a href="mailto:info@diam-tech-beton.be">info@diam-tech-beton.be</a></div>
+          <div class="contact-ligne-text"><strong>Email</strong><a href="/cdn-cgi/l/email-protection#84edeae2ebc4e0ede5e9a9f0e1e7eca9e6e1f0ebeaaae6e1"><span class="__cf_email__" data-cfemail="4e272028210e2a272f23633a2b2d26632c2b3a2120602c2b">[email&#160;protected]</span></a></div>
         </div>
         <div class="contact-ligne">
           <div class="contact-ligne-icon">
@@ -870,7 +912,7 @@ footer span { font-size: 0.62rem; font-weight: 600; color: rgba(192,32,42,0.5); 
         <div class="mentions-item"><span class="label">Responsable</span><span class="value">Michael Hofmans — Administrateur délégué</span></div>
         <div class="mentions-item"><span class="label">Adresse</span><span class="value">4470 Saint-Georges-sur-Meuse, Belgique</span></div>
         <div class="mentions-item"><span class="label">Téléphone</span><span class="value">0484 29 65 48</span></div>
-        <div class="mentions-item"><span class="label">Email</span><span class="value">info@diam-tech-beton.be</span></div>
+        <div class="mentions-item"><span class="label">Email</span><span class="value"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d7beb9b1b897b3beb6bafaa3b2b4bffab5b2a3b8b9f9b5b2">[email&#160;protected]</a></span></div>
         <div class="mentions-item"><span class="label">N° TVA</span><span class="value">BE 1035.597.041</span></div>
         <div class="mentions-item"><span class="label">RPM</span><span class="value">Tribunal de l'entreprise de Liège</span></div>
         <div class="mentions-item"><span class="label">Certification</span><span class="value">VCA — Veiligheid, gezondheid en milieu Checklist Aannemers</span></div>
@@ -927,7 +969,7 @@ footer span { font-size: 0.62rem; font-weight: 600; color: rgba(192,32,42,0.5); 
         <div class="droit-item"><span class="droit-icon">P</span><h4>Portabilité</h4><p>Droit de recevoir vos données dans un format structuré et lisible.</p></div>
         <div class="droit-item"><span class="droit-icon">O</span><h4>Opposition</h4><p>Droit de vous opposer au traitement de vos données personnelles.</p></div>
       </div>
-      <p class="mentions-text" style="margin-top:24px;">Pour exercer ces droits : <strong>info@diam-tech-beton.be</strong> — Autorité de contrôle : APD — Rue de la Presse 35, 1000 Bruxelles — www.autoriteprotectiondonnees.be</p>
+      <p class="mentions-text" style="margin-top:24px;">Pour exercer ces droits : <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c1a8afa7ae81a5a8a0acecb5a4a2a9eca3a4b5aeafefa3a4">[email&#160;protected]</a></strong> — Autorité de contrôle : APD — Rue de la Presse 35, 1000 Bruxelles — www.autoriteprotectiondonnees.be</p>
     </div>
 
     <!-- COOKIES & PROPRIÉTÉ -->
@@ -945,14 +987,4 @@ footer span { font-size: 0.62rem; font-weight: 600; color: rgba(192,32,42,0.5); 
   </footer>
 </div>
 
-<script>
-function showPage(id) {
-  document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
-  document.querySelectorAll('.nav-links a').forEach(function(a) { a.classList.remove('active'); });
-  document.getElementById('page-' + id).classList.add('active');
-  document.getElementById('nav-' + id).classList.add('active');
-  window.scrollTo(0, 0);
-}
-</script>
-</body>
-</html>
+<script data-
