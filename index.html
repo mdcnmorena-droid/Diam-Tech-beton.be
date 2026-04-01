@@ -3,8 +3,51 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Diam-Tech Béton — Carottage de Précision | Liège, Belgique</title>
-<meta name="description" content="Carottage béton de précision. Certifié VCA. Liège et toute la Wallonie. Devis gratuit 24h.">
+<title>Diam-Tech Béton - Carottage de Précision | Liège, Wallonie, Belgique</title>
+<meta name="description" content="Entreprise de carottage béton de précision à Liège. Certifiée VCA. Carottage, sciage, percement béton armé, passage de gaines, ancrages. Interventions en Wallonie, Bruxelles et Nord de la France. Devis gratuit sous 24h.">
+<meta name="keywords" content="carottage béton Liège, carottage béton Belgique, percement béton Liège, carottage précision Wallonie, carottage béton armé, passage gaines béton, perçage mur béton, carottage VCA Liège, Diam-Tech Béton, carottage Saint-Georges-sur-Meuse, sciage béton Liège, percement béton Wallonie, forage béton Belgique, carottage diamant Liège">
+<meta name="author" content="Diam-Tech Béton">
+<meta name="robots" content="index, follow">
+<meta name="geo.region" content="BE-WLG">
+<meta name="geo.placename" content="Liège, Belgique">
+<link rel="canonical" href="https://www.diam-tech-beton.be">
+
+<!-- Open Graph pour réseaux sociaux -->
+<meta property="og:title" content="Diam-Tech Béton - Carottage de Précision à Liège">
+<meta property="og:description" content="Spécialistes du carottage béton de précision en Belgique. Certifié VCA. Devis gratuit sous 24h. Interventions en Wallonie, Bruxelles et Nord de la France.">
+<meta property="og:url" content="https://www.diam-tech-beton.be">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_BE">
+
+<!-- Données structurées pour Google -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Diam-Tech Béton",
+  "description": "Entreprise spécialisée en carottage béton de précision. Certifiée VCA. Interventions à Liège, en Wallonie, Bruxelles et Nord de la France.",
+  "url": "https://www.diam-tech-beton.be",
+  "telephone": "+32484296548",
+  "email": "info@diam-tech-beton.be",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Saint-Georges-sur-Meuse",
+    "postalCode": "4470",
+    "addressCountry": "BE",
+    "addressRegion": "Liège"
+  },
+  "vatID": "BE1035597041",
+  "areaServed": ["Liège", "Wallonie", "Bruxelles", "Nord de la France"],
+  "hasCredential": "VCA",
+  "sameAs": ["https://www.facebook.com/share/1DtrREfa5M/"],
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "description": "Disponible 7j/7, soir et week-end"
+  },
+  "priceRange": "Devis gratuit"
+}
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
 <style>
 :root{--noir:#111111;--gris-fonce:#2d2d2d;--gris-moyen:#4a4a4a;--gris-clair:#c0c0c0;--rouge:#c0202a;--rouge-vif:#d42030;--blanc:#ffffff}
@@ -230,15 +273,12 @@ footer span{font-size:0.65rem;color:rgba(192,32,42,0.55);letter-spacing:0.1em;te
 
 /* RESPONSIVE MOBILE */
 @media(max-width:768px){
-  nav{padding:0 12px;height:auto;min-height:64px;flex-direction:column;align-items:stretch;justify-content:center;padding-top:8px;padding-bottom:8px}
-  .nav-logo{justify-content:center;margin-bottom:8px}
-  .nav-logo svg{height:44px}
-  .nav-links{display:flex;flex-wrap:wrap;justify-content:center;gap:0;width:100%}
-  .nav-links li{flex:1 0 50%}
-  .nav-links a{display:block;text-align:center;padding:8px 4px;font-size:0.6rem;letter-spacing:0.08em;border-top:1px solid rgba(255,255,255,0.06)}
-  .hamburger{display:none}
+  nav{padding:0 16px;height:64px;flex-direction:row;align-items:center;justify-content:space-between}
+  .nav-logo svg{height:48px}
+  .nav-links{display:none}
+  .hamburger{display:flex}
   .call-btn{display:flex}
-  .page{padding-top:120px}
+  .page{padding-top:64px}
 
   .hero-content{padding:48px 24px}
   .hero-title{font-size:2.8rem}
@@ -306,6 +346,16 @@ footer span{font-size:0.65rem;color:rgba(192,32,42,0.55);letter-spacing:0.1em;te
 }
 </style>
 <script>
+function closeMobileMenu() {
+  document.getElementById('mobile-menu').classList.remove('open');
+  document.getElementById('hamburger').classList.remove('open');
+}
+
+function toggleMenu() {
+  document.getElementById('mobile-menu').classList.toggle('open');
+  document.getElementById('hamburger').classList.toggle('open');
+}
+
 function showPage(id) {
   var pages = document.querySelectorAll('.page');
   for (var i = 0; i < pages.length; i++) pages[i].classList.remove('active');
@@ -353,6 +403,9 @@ function showPage(id) {
     <li><a id="nav-contact" onclick="showPage('contact')">Contact</a></li>
     <li><a id="nav-mentions" onclick="showPage('mentions')">Mentions légales</a></li>
   </ul>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
   <a onclick="showPage('carottage')">Carottage</a>
@@ -360,6 +413,16 @@ function showPage(id) {
   <a onclick="showPage('contact')">Contact</a>
   <div class="mobile-menu-divider"></div>
   <a onclick="showPage('mentions')">Mentions légales</a>
+</div>
+
+<div id="mobile-menu" class="mobile-menu">
+  <a href="#" onclick="showPage('accueil');closeMobileMenu();return false;">Accueil</a>
+  <div class="mobile-menu-divider"></div>
+  <a href="#" onclick="showPage('carottage');closeMobileMenu();return false;">Carottage</a>
+  <div class="mobile-menu-divider"></div>
+  <a href="#" onclick="showPage('contact');closeMobileMenu();return false;">Contact</a>
+  <div class="mobile-menu-divider"></div>
+  <a href="#" onclick="showPage('mentions');closeMobileMenu();return false;">Mentions légales</a>
 </div>
 
 <a href="tel:+32484296548" class="call-btn">
@@ -370,7 +433,7 @@ function showPage(id) {
 <div id="page-accueil" class="page active">
   <section class="hero">
     <div class="hero-content">
-      <div class="hero-tag">Belgium — Liège — Certifié VCA</div>
+      <div class="hero-tag">Belgium - Liège - Certifié VCA</div>
       <h1 class="hero-title">Précision<br><em>dans le béton.</em></h1>
       <p class="hero-sub">Spécialistes du carottage de précision en Belgique. Interventions rapides, résultats propres, zone de travail maîtrisée.</p>
       <div class="hero-ctas">
@@ -399,7 +462,7 @@ function showPage(id) {
       <div class="pourquoi-card">
         <svg class="pourquoi-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="22" cy="16" r="7"/><path d="M8 38c0-7.7 6.3-14 14-14s14 6.3 14 14"/></svg>
         <h3>Patron sur chantier</h3>
-        <p>Michael Hofmans intervient personnellement. Pas d'intermédiaire — vous avez affaire directement au spécialiste.</p>
+        <p>Michael Hofmans intervient personnellement. Pas d'intermédiaire - vous avez affaire directement au spécialiste.</p>
       </div>
       <div class="pourquoi-card">
         <svg class="pourquoi-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="16" width="28" height="20" rx="2"/><path d="M14 16v-4a8 8 0 0116 0v4"/></svg>
@@ -430,7 +493,7 @@ function showPage(id) {
     <div class="client-block">
       <svg class="client-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="12" width="36" height="28" rx="1"/><path d="M14 12L14 8L30 8L30 12"/><line x1="4" y1="22" x2="40" y2="22"/><line x1="22" y1="22" x2="22" y2="40"/></svg>
       <h3>Professionnels</h3>
-      <p>Entrepreneurs, architectes, bureaux d'études, gestionnaires d'immeubles — nous sommes votre partenaire terrain fiable pour tous vos chantiers.</p>
+      <p>Entrepreneurs, architectes, bureaux d'études, gestionnaires d'immeubles - nous sommes votre partenaire terrain fiable pour tous vos chantiers.</p>
       <ul>
         <li>Chantiers de génie civil et gros œuvre</li>
         <li>Bâtiments industriels, hôpitaux, entrepôts</li>
@@ -476,20 +539,20 @@ function showPage(id) {
           <div class="zone-item"><span class="zone-dot"></span>Brabant wallon</div>
           <div class="zone-item"><span class="zone-dot"></span>Bruxelles</div>
           <div class="zone-item"><span class="zone-dot"></span>Nord de la France</div>
-          <div class="zone-item"><span class="zone-dot"></span>Sur devis — autres régions</div>
+          <div class="zone-item"><span class="zone-dot"></span>Sur devis - autres régions</div>
         </div>
       </div>
       <div>
         <div class="zone-box">
           <h4>Intervention prioritaire</h4>
           <p>La province de Liège et les zones limitrophes bénéficient d'un délai d'intervention particulièrement rapide. Nous pouvons souvent intervenir le jour même ou le lendemain pour les demandes urgentes.</p>
-          <p>Pour les chantiers situés hors de notre zone habituelle, n'hésitez pas à nous contacter — nous étudions chaque demande et nous déplaçons sur l'ensemble du territoire belge ainsi qu'en France frontalière.</p>
+          <p>Pour les chantiers situés hors de notre zone habituelle, n'hésitez pas à nous contacter - nous étudions chaque demande et nous déplaçons sur l'ensemble du territoire belge ainsi qu'en France frontalière.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <footer><p>TVA: BE 1035.597.041 — RPM Liège — www.diam-tech-beton.be</p><span>Diam-Tech Béton © 2026</span></footer>
+  <footer><p>TVA: BE 1035.597.041 - RPM Liège - www.diam-tech-beton.be</p><span>Diam-Tech Béton © 2026</span></footer>
 </div>
 
 <!-- ════ PAGE CAROTTAGE ════ -->
@@ -505,7 +568,7 @@ function showPage(id) {
       <svg class="svc-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="24" cy="24" r="16"/><circle cx="24" cy="24" r="7"/><line x1="24" y1="2" x2="24" y2="9"/><line x1="24" y1="39" x2="24" y2="46"/><line x1="2" y1="24" x2="9" y2="24"/><line x1="39" y1="24" x2="46" y2="24"/></svg>
       <h3>Carottage béton</h3>
       <p>Perçage circulaire de haute précision dans tous types de structures béton, armé ou non. Diamètres de 25 mm à 1000 mm.</p>
-      <ul><li>Dalles, murs porteurs, voiles, poutres</li><li>Béton armé dense — couronne diamantée</li><li>Carottage à l'eau : coupe nette, poussière réduite</li><li>Forages jusqu'à plusieurs mètres de profondeur</li></ul>
+      <ul><li>Dalles, murs porteurs, voiles, poutres</li><li>Béton armé dense - couronne diamantée</li><li>Carottage à l'eau : coupe nette, poussière réduite</li><li>Forages jusqu'à plusieurs mètres de profondeur</li></ul>
     </div>
     <div class="svc">
       <svg class="svc-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 40L8 10L28 10L40 22L40 40Z"/><path d="M28 10L28 22L40 22"/><line x1="14" y1="28" x2="34" y2="28"/><line x1="14" y1="34" x2="28" y2="34"/></svg>
@@ -535,7 +598,7 @@ function showPage(id) {
       <div class="svc-explainer">
         <p class="et">Comment ça fonctionne</p>
         <p>Contrairement au carottage simple qui produit un trou unique circulaire, le carottage sécant consiste à multiplier les forages autour du périmètre de l'ouverture souhaitée. Chaque carotte est extraite individuellement, et les percements se recoupent légèrement pour que le bloc central puisse être dégagé.</p>
-        <p>Le résultat est une ouverture de grande taille aux bords précis, réalisée sans percussion lourde, sans vibrations structurelles — même dans le béton fortement armé.</p>
+        <p>Le résultat est une ouverture de grande taille aux bords précis, réalisée sans percussion lourde, sans vibrations structurelles - même dans le béton fortement armé.</p>
       </div>
     </div>
   </div>
@@ -547,7 +610,7 @@ function showPage(id) {
     <div class="appli-grid">
       <div class="appli"><div class="appli-dot"></div><div><strong>Rénovation résidentielle</strong><p>Passage de gaines en logement occupé, création de portes ou fenêtres, installation VMC ou climatisation.</p></div></div>
       <div class="appli"><div class="appli-dot"></div><div><strong>Bâtiments industriels</strong><p>Traversées de murs porteurs, passages de canalisations industrielles, fixations lourdes sur structures existantes.</p></div></div>
-      <div class="appli"><div class="appli-dot"></div><div><strong>Hôpitaux &amp; laboratoires</strong><p>Interventions en milieu sensible avec nuisances minimisées — poussière et vibrations maîtrisées.</p></div></div>
+      <div class="appli"><div class="appli-dot"></div><div><strong>Hôpitaux &amp; laboratoires</strong><p>Interventions en milieu sensible avec nuisances minimisées - poussière et vibrations maîtrisées.</p></div></div>
       <div class="appli"><div class="appli-dot"></div><div><strong>Génie civil &amp; voirie</strong><p>Passages de canalisations sous voirie, traversées de fondations, interventions sur ouvrages d'art.</p></div></div>
       <div class="appli"><div class="appli-dot"></div><div><strong>Immeubles &amp; copropriétés</strong><p>Travaux en parties communes, réservations pour équipements collectifs, interventions en étages.</p></div></div>
       <div class="appli"><div class="appli-dot"></div><div><strong>Évacuations &amp; toitures</strong><p>Création de systèmes d'évacuation des eaux pluviales sur balcons, toitures et terrasses en béton.</p></div></div>
@@ -575,13 +638,13 @@ function showPage(id) {
     <div class="methodes-grid">
       <div class="meth">
         <span class="meth-tag sec">Carottage à sec</span>
-        <h3>À sec — avec aspiration</h3>
+        <h3>À sec - avec aspiration</h3>
         <p>Idéal en intérieur, dans des espaces finis ou sensibles où l'eau causerait des dégâts.</p>
         <ul><li>Intérieur logement occupé, parquets, finitions</li><li>Petits diamètres jusqu'à environ 100 mm</li><li>Pose de poêles, ventouses, grilles d'aération</li><li>Chantiers où l'eau est proscrite</li></ul>
       </div>
       <div class="meth">
         <span class="meth-tag eau">Carottage à l'eau</span>
-        <h3>À l'eau — avec aspiration des boues</h3>
+        <h3>À l'eau - avec aspiration des boues</h3>
         <p>Technique de référence pour le béton armé et les grands diamètres. L'eau refroidit la couronne.</p>
         <ul><li>Béton armé dense, tous diamètres</li><li>Grand diamètre à partir de 100 mm</li><li>Chantiers extérieurs et en construction</li><li>Forage en profondeur jusqu'à plusieurs mètres</li></ul>
       </div>
@@ -602,8 +665,8 @@ function showPage(id) {
       <span>Certifié<br>VCA</span>
     </div>
     <div class="certif-txt">
-      <h4>Technique diamant — Sécurité &amp; Propreté garanties</h4>
-      <p>Le carottage diamant à l'eau est la seule technique garantissant une découpe nette tout en réduisant au maximum les vibrations et la poussière. Diam-Tech Béton opère sous certification VCA. L'exécution est basée sur les axes tracés et validés par le client — Diam-Tech décline toute responsabilité pour les réseaux non signalés.</p>
+      <h4>Technique diamant - Sécurité &amp; Propreté garanties</h4>
+      <p>Le carottage diamant à l'eau est la seule technique garantissant une découpe nette tout en réduisant au maximum les vibrations et la poussière. Diam-Tech Béton opère sous certification VCA. L'exécution est basée sur les axes tracés et validés par le client - Diam-Tech décline toute responsabilité pour les réseaux non signalés.</p>
     </div>
   </div>
 
@@ -621,7 +684,7 @@ function showPage(id) {
     </div>
   </section>
 
-  <footer><p>TVA: BE 1035.597.041 — RPM Liège — www.diam-tech-beton.be</p><span>Diam-Tech Béton © 2026</span></footer>
+  <footer><p>TVA: BE 1035.597.041 - RPM Liège - www.diam-tech-beton.be</p><span>Diam-Tech Béton © 2026</span></footer>
 </div>
 
 <!-- ════ PAGE CONTACT ════ -->
@@ -632,9 +695,9 @@ function showPage(id) {
       <h2>Parlons de<br>votre chantier.</h2>
       <div class="contact-infos">
         <div class="c-ligne"><div class="c-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14v2.92z"/></svg></div><div class="c-text"><strong>Téléphone</strong><a href="tel:+32484296548">0484 29 65 48</a></div></div>
-        <div class="c-ligne"><div class="c-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div class="c-text"><strong>Email</strong><a href="mailto:info@diam-tech-beton.be" style="color:inherit">info@diam-tech-beton.be</a></div></div>
+        <div class="c-ligne"><div class="c-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div class="c-text"><strong>Email</strong><a href="/cdn-cgi/l/email-protection#a6cfc8c0c9e6c2cfc7cb8bd2c3c5ce8bc4c3d2c9c888c4c3" style="color:inherit"><span class="__cf_email__" data-cfemail="e0898e868fa08489818dcd94858388cd8285948f8ece8285">[email&#160;protected]</span></a></div></div>
         <div class="c-ligne"><div class="c-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div class="c-text"><strong>Adresse</strong><span>4470 Saint-Georges-sur-Meuse, Belgique</span></div></div>
-        <div class="c-ligne"><div class="c-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg></div><div class="c-text"><strong>Disponibilité</strong><span>7j/7 — soir &amp; week-end</span></div></div>
+        <div class="c-ligne"><div class="c-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg></div><div class="c-text"><strong>Disponibilité</strong><span>7j/7 - soir &amp; week-end</span></div></div>
         <div class="c-ligne"><div class="c-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg></div><div class="c-text"><strong>Zone d'intervention</strong><span>Wallonie, Bruxelles, Nord de la France</span></div></div>
       </div>
       <div class="social-wrap">
@@ -646,7 +709,7 @@ function showPage(id) {
       </div>
     </div>
     <div class="contact-right">
-      <h3>Demande de devis gratuit — réponse sous 24h</h3>
+      <h3>Demande de devis gratuit - réponse sous 24h</h3>
       <form action="https://formspree.io/f/mwvwbory" method="POST">
         <div class="form-row">
           <div class="fg"><label>Prénom</label><input type="text" name="prenom" placeholder="Michel" required></div>
@@ -671,7 +734,7 @@ function showPage(id) {
       </form>
     </div>
   </div>
-  <footer><p>TVA: BE 1035.597.041 — RPM Liège — www.diam-tech-beton.be</p><span>Diam-Tech Béton © 2026</span></footer>
+  <footer><p>TVA: BE 1035.597.041 - RPM Liège - www.diam-tech-beton.be</p><span>Diam-Tech Béton © 2026</span></footer>
 </div>
 
 <!-- ════ PAGE MENTIONS ════ -->
@@ -679,7 +742,7 @@ function showPage(id) {
   <div class="page-header">
     <span class="ph-tag">Conformité &amp; Transparence</span>
     <h1>Mentions légales &amp;<br>Confidentialité</h1>
-    <p>Conformément à la législation belge et au Règlement Général sur la Protection des Données (RGPD — UE 2016/679). Dernière mise à jour : mars 2026.</p>
+    <p>Conformément à la législation belge et au Règlement Général sur la Protection des Données (RGPD - UE 2016/679). Dernière mise à jour : mars 2026.</p>
   </div>
   <section class="ment-section">
     <div class="ment-grid">
@@ -689,10 +752,10 @@ function showPage(id) {
         <div class="ment-row"><strong>Responsable : </strong><span>Michael Hofmans, Administrateur délégué</span></div>
         <div class="ment-row"><strong>Adresse : </strong><span>4470 Saint-Georges-sur-Meuse, Belgique</span></div>
         <div class="ment-row"><strong>Téléphone : </strong><span>0484 29 65 48</span></div>
-        <div class="ment-row"><strong>Email : </strong><span><a href="mailto:info@diam-tech-beton.be" style="color:inherit">info@diam-tech-beton.be</a></span></div>
+        <div class="ment-row"><strong>Email : </strong><span><a href="/cdn-cgi/l/email-protection#274e49414867434e464a0a5342444f0a4542534849094542" style="color:inherit"><span class="__cf_email__" data-cfemail="b9d0d7dfd6f9ddd0d8d494cddcdad194dbdccdd6d797dbdc">[email&#160;protected]</span></a></span></div>
         <div class="ment-row"><strong>N° TVA : </strong><span>BE 1035.597.041</span></div>
         <div class="ment-row"><strong>RPM : </strong><span>Tribunal de l'entreprise de Liège</span></div>
-        <div class="ment-row"><strong>Certification : </strong><span>VCA — Veiligheid, gezondheid en milieu Checklist Aannemers</span></div>
+        <div class="ment-row"><strong>Certification : </strong><span>VCA - Veiligheid, gezondheid en milieu Checklist Aannemers</span></div>
       </div>
       <div class="ment-card">
         <h3>2. Hébergement</h3>
@@ -701,7 +764,7 @@ function showPage(id) {
         <div class="ment-row"><strong>Site : </strong><span>www.combell.com</span></div>
         <h3 style="margin-top:28px">3. Propriété intellectuelle</h3>
         <p class="ment-text">L'ensemble du contenu de ce site (textes, visuels, logo, structure) est la propriété exclusive de Diam-Tech Béton. Toute reproduction sans autorisation écrite préalable est interdite.</p>
-        <p class="ment-text">Identité visuelle créée par <strong>DOUBLE M</strong> — Morena Mendicino, graphiste, Liège.</p>
+        <p class="ment-text">Identité visuelle créée par <strong>DOUBLE M</strong> - Morena Mendicino, graphiste, Liège.</p>
       </div>
     </div>
 
@@ -714,9 +777,4 @@ function showPage(id) {
       <div class="ment-block">
         <div class="ment-num">5</div>
         <h3>Protection des données (RGPD)</h3>
-        <p>Données collectées via le formulaire : prénom, nom, téléphone, email, type de prestation, description du chantier. Finalité : traitement des demandes de devis uniquement. Conservation : 3 ans maximum. Droits : accès, rectification, effacement — contact : info@diam-tech-beton.be. Autorité de contrôle : APD Belgique — www.autoriteprotectiondonnees.be</p>
-      </div>
-      <div class="ment-block">
-        <div class="ment-num">6</div>
-        <h3>Cookies &amp; Droit applicable</h3>
-        <p>Ce site utilise uniquement des cookies fonctionnels strictement nécessaires. Aucun cookie de tracking ou publicité n'est utilisé. Le f
+        <p>Données collectées via le formulaire : prénom, nom, téléphone, email, type de prestation, description du chantier. Finalité : traitement des demandes de devis uniquement. Conservation : 3 ans maximum. Droits : accès, rectification, effacement - contact : <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b3daddd5dcf3d7dad2de9ec
