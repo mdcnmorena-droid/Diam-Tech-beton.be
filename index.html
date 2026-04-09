@@ -69,7 +69,7 @@ body{font-family:'Montserrat',sans-serif;background:var(--noir);color:var(--blan
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:72px;background:rgba(17,17,17,0.98);border-bottom:1px solid rgba(192,32,42,0.3)}
 .nav-logo{display:flex;align-items:center;cursor:pointer;flex-shrink:0}
-.nav-logo svg{height:88px;width:auto}
+.nav-logo svg{height:100px;width:auto}
 .nav-links{display:flex;gap:32px;list-style:none}
 .nav-links a{color:var(--gris-clair);text-decoration:none;font-weight:600;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;position:relative;padding-bottom:4px;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
 .nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--rouge);transition:width 0.3s}
@@ -285,7 +285,7 @@ footer span{font-size:0.65rem;color:rgba(192,32,42,0.55);letter-spacing:0.1em;te
 /* RESPONSIVE MOBILE */
 @media(max-width:768px){
   nav{padding:0 16px;height:64px;flex-direction:row;align-items:center;justify-content:space-between}
-  .nav-logo svg{height:68px}
+  .nav-logo svg{height:78px}
   .nav-links{display:none}
   .hamburger{display:flex}
   .call-btn{display:flex}
@@ -351,6 +351,7 @@ footer span{font-size:0.65rem;color:rgba(192,32,42,0.55);letter-spacing:0.1em;te
   .ment-section{padding:48px 24px}
   .ment-grid{grid-template-columns:1fr}
   .ment-grid3{grid-template-columns:1fr}
+  .remises-grid{grid-template-columns:1fr !important}
   /* Empêcher tout débordement */
   .page, section, div { max-width: 100%; }
   table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
@@ -540,7 +541,7 @@ function showPage(id) {
     <span class="section-tag" style="color:rgba(255,255,255,0.8)">Offre exclusive</span>
     <h2 class="section-title" style="color:var(--blanc)">Plus vous forez, moins vous payez.</h2>
     <p style="font-size:0.95rem;font-weight:300;color:rgba(255,255,255,0.9);line-height:1.8;margin-bottom:40px">Nous récompensons la fidélité et les chantiers d'envergure. Plus votre commande est importante, plus nos tarifs s'adaptent à votre budget. Contactez-nous pour obtenir une offre personnalisée adaptée à vos besoins.</p>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(255,255,255,0.15);margin-bottom:40px">
+    <div class="remises-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(255,255,255,0.15);margin-bottom:40px">
       <div style="background:rgba(0,0,0,0.2);padding:32px 24px;text-align:center">
         <div style="font-style:italic;font-weight:900;font-size:2rem;color:var(--blanc);margin-bottom:8px">Volume</div>
         <div style="font-weight:700;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.9);margin-bottom:6px">Chantier groupé</div>
@@ -744,7 +745,7 @@ function showPage(id) {
       <h2>Parlons de<br>votre chantier.</h2>
       <div class="contact-infos">
         <div class="c-ligne"><div class="c-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14v2.92z"/></svg></div><div class="c-text"><strong>Téléphone</strong><a href="tel:+32484296548">0484 29 65 48</a></div></div>
-        <div class="c-ligne"><div class="c-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div class="c-text"><strong>Email</strong>info@diam-tech-beton.be</div></div>
+        <div class="c-ligne"><div class="c-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div class="c-text"><strong>Email</strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5b32353d341b3f323a36762f3e383376393e2f343575393e">[email&#160;protected]</a></div></div>
         <div class="c-ligne"><div class="c-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div class="c-text"><strong>Adresse</strong><span>4470 Saint-Georges-sur-Meuse, Belgique</span></div></div>
         <div class="c-ligne"><div class="c-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg></div><div class="c-text"><strong>Disponibilité</strong><span>7j/7 - soir &amp; week-end</span></div></div>
         <div class="c-ligne"><div class="c-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg></div><div class="c-text"><strong>Zone d'intervention</strong><span>Toute la Belgique, Nord de la France, Luxembourg</span></div></div>
@@ -918,7 +919,7 @@ function showPage(id) {
         <div class="ment-row"><strong>Responsable : </strong><span>Michael Hofmans, Administrateur délégué</span></div>
         <div class="ment-row"><strong>Adresse : </strong><span>4470 Saint-Georges-sur-Meuse, Belgique</span></div>
         <div class="ment-row"><strong>Téléphone : </strong><span>0484 29 65 48</span></div>
-        <div class="ment-row"><strong>Email : </strong><a href="mailto:info@diam-tech-beton.be" style="color:var(--gris-clair)">info@diam-tech-beton.be</a></div>
+        <div class="ment-row"><strong>Email : </strong><a href="/cdn-cgi/l/email-protection#e58c8b838aa5818c8488c89180868dc88780918a8bcb8780" style="color:var(--gris-clair)"><span class="__cf_email__" data-cfemail="3950575f56795d505854144d5c5a51145b5c4d5657175b5c">[email&#160;protected]</span></a></div>
         <div class="ment-row"><strong>N° TVA : </strong><span>BE 1035.597.041</span></div>
         <div class="ment-row"><strong>RPM : </strong><span>Tribunal de l'entreprise de Liège</span></div>
         <div class="ment-row"><strong>Certification : </strong><span>VCA ✓</span></div>
@@ -929,7 +930,7 @@ function showPage(id) {
         <div class="ment-row"><strong>Site : </strong><span>www.combell.com</span></div>
         <div class="ment-row"><strong>Design : </strong><span>DOUBLE M - Morena Mendicino, graphiste, Liège</span></div>
         <h3 style="margin-top:24px">Protection des données (RGPD)</h3>
-        <p class="ment-text">Données collectées via le formulaire : prénom, nom, téléphone, email, prestation. Finalité : traitement des demandes de devis uniquement. Conservation : 3 ans maximum. Droits : accès, rectification, effacement - contact : info@diam-tech-beton.be. APD Belgique : www.autoriteprotectiondonnees.be</p>
+        <p class="ment-text">Données collectées via le formulaire : prénom, nom, téléphone, email, prestation. Finalité : traitement des demandes de devis uniquement. Conservation : 3 ans maximum. Droits : accès, rectification, effacement - contact : <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f1989f979eb19598909cdc85949299dc9394859e9fdf9394">[email&#160;protected]</a>. APD Belgique : www.autoriteprotectiondonnees.be</p>
       </div>
     </div>
     <div class="ment-grid3">
@@ -952,12 +953,12 @@ function showPage(id) {
     <div class="ment-grid3">
       <div class="ment-block"><div class="ment-num">1</div><h3>Cookies utilisés</h3><p>Ce site utilise uniquement des cookies techniques strictement nécessaires à son bon fonctionnement. Aucun cookie de tracking, de publicité ou d'analyse comportementale n'est déposé sur votre appareil.</p></div>
       <div class="ment-block"><div class="ment-num">2</div><h3>Formulaire de contact</h3><p>Le formulaire utilise Formspree (formspree.io). Ce service peut déposer des cookies techniques liés à la soumission. Consultez leur politique sur formspree.io/legal/privacy-policy.</p></div>
-      <div class="ment-block"><div class="ment-num">3</div><h3>Vos droits</h3><p>Vous pouvez désactiver les cookies dans les paramètres de votre navigateur. Contact : info@diam-tech-beton.be. Autorité de contrôle : APD Belgique - www.autoriteprotectiondonnees.be</p></div>
+      <div class="ment-block"><div class="ment-num">3</div><h3>Vos droits</h3><p>Vous pouvez désactiver les cookies dans les paramètres de votre navigateur. Contact : <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4d24232b220d29242c206039282e25602f28392223632f28">[email&#160;protected]</a>. Autorité de contrôle : APD Belgique - www.autoriteprotectiondonnees.be</p></div>
     </div>
   </section>
   <footer><p>TVA: BE 1035.597.041 - RPM Liège - www.diam-tech-beton.be</p><div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap;justify-content:center"><a href="#" onclick="showPage('mentions')" style="font-size:0.68rem;color:rgba(192,32,42,0.7);letter-spacing:0.1em;text-transform:uppercase;text-decoration:none">Mentions légales</a><span style="color:rgba(255,255,255,0.2)">|</span><a href="#" onclick="showPage('cookies')" style="font-size:0.68rem;color:rgba(192,32,42,0.7);letter-spacing:0.1em;text-transform:uppercase;text-decoration:none">Politique cookies</a><span style="color:rgba(255,255,255,0.2)">|</span><span style="font-size:0.65rem;color:rgba(192,32,42,0.55);letter-spacing:0.1em;text-transform:uppercase">Diam-Tech Béton © 2026</span></div></footer>
 </div>
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 function showPage(id) {
   var pages = document.querySelectorAll('.page');
   for (var i = 0; i < pages.length; i++) pages[i].classList.remove('active');
@@ -969,26 +970,4 @@ function showPage(id) {
   if (p) p.classList.add('active');
   var n = document.getElementById('nav-' + id);
   if (n) n.classList.add('active');
-  var mm = document.getElementById('mobile-menu');
-  var hb = document.getElementById('hamburger');
-  if (mm) mm.classList.remove('open');
-  if (hb) hb.classList.remove('open');
-  window.scrollTo(0, 0);
-}
-
-function closeMobileMenu() {
-  var mm = document.getElementById('mobile-menu');
-  var hb = document.getElementById('hamburger');
-  if (mm) mm.classList.remove('open');
-  if (hb) hb.classList.remove('open');
-}
-
-function toggleMenu() {
-  var mm = document.getElementById('mobile-menu');
-  var hb = document.getElementById('hamburger');
-  if (mm) mm.classList.toggle('open');
-  if (hb) hb.classList.toggle('open');
-}
-</script>
-</body>
-</html>
+  var mm = docum
