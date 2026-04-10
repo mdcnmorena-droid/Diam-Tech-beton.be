@@ -10,12 +10,12 @@
 <meta name="robots" content="index, follow">
 <meta name="geo.region" content="BE-WLG">
 <meta name="geo.placename" content="Liège, Belgique">
-<link rel="canonical" href="https://www.diam-tech-beton.be">
+<link rel="canonical" href="https://http://diam-tech-beton.be/">
 
 <!-- Open Graph pour réseaux sociaux -->
 <meta property="og:title" content="Diam-Tech Béton - Carottage de Précision à Liège">
 <meta property="og:description" content="Spécialistes du carottage béton de précision en Belgique. Certifié VCA ✓. Devis gratuit sous 24h. Interventions en Wallonie, Bruxelles et Nord de la France.">
-<meta property="og:url" content="https://www.diam-tech-beton.be">
+<meta property="og:url" content="https://http://diam-tech-beton.be/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_BE">
 
@@ -26,7 +26,7 @@
   "@type": "LocalBusiness",
   "name": "Diam-Tech Béton",
   "description": "Entreprise spécialisée en carottage béton de précision. Certifiée VCA ✓. Interventions à Liège, en Wallonie, Bruxelles et Nord de la France.",
-  "url": "https://www.diam-tech-beton.be",
+  "url": "https://http://diam-tech-beton.be/",
   "telephone": "+32484296548",
   "email": "info@diam-tech-beton.be",
   "address": {
@@ -232,13 +232,7 @@ footer span{font-size:0.65rem;color:rgba(192,32,42,0.55);letter-spacing:0.1em;te
 .certif-txt h4{font-weight:700;font-size:0.95rem;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:10px}
 .certif-txt p{font-size:0.84rem;font-weight:300;color:var(--gris-clair);line-height:1.75}
 
-/* FAQ */
-.faq-section{padding:72px 80px;border-top:1px solid rgba(255,255,255,0.07)}
-.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:rgba(255,255,255,0.05);margin-top:48px}
-.faq-item{background:var(--gris-fonce);padding:36px}
-.faq-num{font-style:italic;font-weight:900;font-size:1.8rem;color:var(--rouge);margin-bottom:10px}
-.faq-item h4{font-weight:700;font-size:0.82rem;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:12px}
-.faq-item p{font-size:0.82rem;font-weight:300;color:var(--gris-clair);line-height:1.75}
+
 
 /* CONTACT */
 .contact-layout{display:grid;grid-template-columns:1fr 1fr}
@@ -340,8 +334,8 @@ footer span{font-size:0.65rem;color:rgba(192,32,42,0.55);letter-spacing:0.1em;te
   .orient{padding:28px 24px}
   .certif{padding:36px 24px;flex-direction:column;gap:20px}
 
-  .faq-section{padding:48px 24px}
-  .faq-grid{grid-template-columns:1fr}
+  
+  
 
   .contact-layout{grid-template-columns:1fr}
   .contact-left{padding:48px 24px 36px;border-right:none;border-bottom:1px solid rgba(255,255,255,0.07)}
@@ -413,7 +407,6 @@ function showPage(id) {
     <li><a id="nav-accueil" class="active" onclick="showPage('accueil')">Accueil</a></li>
     <li><a id="nav-carottage" onclick="showPage('carottage')">Carottage</a></li>
     <li><a id="nav-secant" onclick="showPage('secant')">Carottage sécant</a></li>
-    <li><a id="nav-cg" onclick="showPage('cg')">Conditions générales</a></li>
     <li><a id="nav-contact" onclick="showPage('contact')">Contact</a></li>
   </ul>
   <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
@@ -434,8 +427,6 @@ function showPage(id) {
   <a href="#" onclick="showPage('carottage');closeMobileMenu();return false;">Carottage</a>
   <div class="mobile-menu-divider"></div>
   <a href="#" onclick="showPage('secant');closeMobileMenu();return false;">Carottage sécant</a>
-  <div class="mobile-menu-divider"></div>
-  <a href="#" onclick="showPage('cg');closeMobileMenu();return false;">Conditions générales</a>
   <div class="mobile-menu-divider"></div>
   <a href="#" onclick="showPage('contact');closeMobileMenu();return false;">Contact</a>
 </div>
@@ -595,7 +586,7 @@ function showPage(id) {
   </section>
 
   <footer>
-  <p>TVA: BE 1035.597.041 - RPM Liège - www.diam-tech-beton.be</p>
+  <p>TVA: BE 1035.597.041 - RPM Liège - http://diam-tech-beton.be/</p>
   <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap;justify-content:center">
     <a href="#" onclick="showPage('mentions')" style="font-size:0.68rem;color:rgba(192,32,42,0.7);letter-spacing:0.1em;text-transform:uppercase;text-decoration:none">Mentions légales</a>
     <span style="color:rgba(255,255,255,0.2)">|</span>
@@ -709,22 +700,10 @@ function showPage(id) {
     </div>
   </div>
 
-  <section class="faq-section">
-    <span class="section-tag">Questions fréquentes</span>
-    <h2 class="section-title">FAQ</h2>
-    <p class="section-sub">Les réponses aux questions que nos clients posent le plus souvent.</p>
-    <div class="faq-grid">
-      <div class="faq-item"><div class="faq-num">01</div><h4>Combien de temps dure une intervention ?</h4><p>Un carottage simple (1 à 5 trous) prend généralement entre 1 et 3 heures selon le diamètre et l'épaisseur. Une intervention plus complexe peut prendre une demi-journée ou une journée complète. Nous vous donnons une estimation précise lors du devis.</p></div>
-      <div class="faq-item"><div class="faq-num">02</div><h4>Faut-il vider la pièce avant l'intervention ?</h4><p>Non, il n'est pas nécessaire de vider entièrement la pièce. Il suffit de dégager un espace de travail d'environ 1 mètre autour de la zone de percement. Notre système d'aspiration garantit une propreté maximale.</p></div>
-      <div class="faq-item"><div class="faq-num">03</div><h4>Le carottage est-il dangereux pour la structure ?</h4><p>Non, à condition d'avoir localisé les armatures et les réseaux préalablement. Nous travaillons sur la base des axes validés par le client. La technique diamant ne génère aucune vibration susceptible d'endommager la structure.</p></div>
-      <div class="faq-item"><div class="faq-num">04</div><h4>Intervenez-vous le week-end ou en soirée ?</h4><p>Oui, nous sommes disponibles 7j/7. Nous comprenons que certains chantiers nécessitent des interventions en dehors des heures ouvrables pour minimiser les nuisances. Contactez-nous pour convenir d'un horaire adapté.</p></div>
-      <div class="faq-item"><div class="faq-num">05</div><h4>Le devis est-il vraiment gratuit ?</h4><p>Oui, absolument. Nous nous déplaçons sur votre chantier pour établir un devis précis, sans engagement de votre part. La visite et le devis sont entièrement gratuits, et vous recevez une réponse sous 24h.</p></div>
-      <div class="faq-item"><div class="faq-num">06</div><h4>Quels matériaux pouvez-vous percer ?</h4><p>Nous intervenons sur béton standard, béton armé (toutes densités de ferraillage), brique, parpaing, pierre naturelle (calcaire, grès, granit) et asphalte. La technique diamant s'adapte à pratiquement tous les supports rencontrés dans la construction.</p></div>
-    </div>
-  </section>
+  
 
   <footer>
-  <p>TVA: BE 1035.597.041 - RPM Liège - www.diam-tech-beton.be</p>
+  <p>TVA: BE 1035.597.041 - RPM Liège - http://diam-tech-beton.be/</p>
   <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap;justify-content:center">
     <a href="#" onclick="showPage('mentions')" style="font-size:0.68rem;color:rgba(192,32,42,0.7);letter-spacing:0.1em;text-transform:uppercase;text-decoration:none">Mentions légales</a>
     <span style="color:rgba(255,255,255,0.2)">|</span>
@@ -743,7 +722,7 @@ function showPage(id) {
       <h2>Parlons de<br>votre chantier.</h2>
       <div class="contact-infos">
         <div class="c-ligne"><div class="c-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14v2.92z"/></svg></div><div class="c-text"><strong>Téléphone</strong><a href="tel:+32484296548">0484 29 65 48</a></div></div>
-        <div class="c-ligne"><div class="c-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div class="c-text"><strong>Email</strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f69f989099b6929f979bdb8293959edb9493829998d89493">[email&#160;protected]</a></div></div>
+        <div class="c-ligne"><div class="c-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div class="c-text"><strong>Email</strong><a href="mailto:info@diam-tech-beton.be" style="color:var(--blanc);text-decoration:none">info@diam-tech-beton.be</a></div></div>
         <div class="c-ligne"><div class="c-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div class="c-text"><strong>Adresse</strong><span>4470 Saint-Georges-sur-Meuse, Belgique</span></div></div>
         <div class="c-ligne"><div class="c-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg></div><div class="c-text"><strong>Disponibilité</strong><span>7j/7 - soir &amp; week-end</span></div></div>
         <div class="c-ligne"><div class="c-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg></div><div class="c-text"><strong>Zone d'intervention</strong><span>Toute la Belgique, Nord de la France, Luxembourg</span></div></div>
@@ -783,7 +762,7 @@ function showPage(id) {
     </div>
   </div>
   <footer>
-  <p>TVA: BE 1035.597.041 - RPM Liège - www.diam-tech-beton.be</p>
+  <p>TVA: BE 1035.597.041 - RPM Liège - http://diam-tech-beton.be/</p>
   <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap;justify-content:center">
     <a href="#" onclick="showPage('mentions')" style="font-size:0.68rem;color:rgba(192,32,42,0.7);letter-spacing:0.1em;text-transform:uppercase;text-decoration:none">Mentions légales</a>
     <span style="color:rgba(255,255,255,0.2)">|</span>
@@ -842,64 +821,7 @@ function showPage(id) {
     <p style="font-size:0.9rem;font-weight:300;color:var(--gris-clair);max-width:560px;margin:0 auto 40px;line-height:1.8">Décrivez-nous votre chantier et nous vous proposons une solution adaptée avec un devis gratuit sous 24h.</p>
     <a href="#" onclick="showPage('contact')" class="btn-primary">Demander un devis gratuit</a>
   </section>
-  <footer><p>TVA: BE 1035.597.041 - RPM Liège - www.diam-tech-beton.be</p><div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap;justify-content:center"><a href="#" onclick="showPage('mentions')" style="font-size:0.68rem;color:rgba(192,32,42,0.7);letter-spacing:0.1em;text-transform:uppercase;text-decoration:none">Mentions légales</a><span style="color:rgba(255,255,255,0.2)">|</span><a href="#" onclick="showPage('cookies')" style="font-size:0.68rem;color:rgba(192,32,42,0.7);letter-spacing:0.1em;text-transform:uppercase;text-decoration:none">Politique cookies</a><span style="color:rgba(255,255,255,0.2)">|</span><span style="font-size:0.65rem;color:rgba(192,32,42,0.55);letter-spacing:0.1em;text-transform:uppercase">Diam-Tech Béton © 2026</span></div></footer>
-</div>
-
-<!-- ════ PAGE CONDITIONS GÉNÉRALES ════ -->
-<div id="page-cg" class="page">
-  <div class="page-header">
-    <span class="ph-tag">Transparence & Engagement</span>
-    <h1>Conditions<br>générales</h1>
-    <p>Conditions d'intervention, responsabilités et engagements de Diam-Tech Béton envers ses clients.</p>
-  </div>
-  <section class="ment-section">
-    <div class="ment-grid">
-      <div class="ment-card">
-        <h3>Paiement</h3>
-        <p class="ment-text">30 jours fin de mois sur facture. Acompte 30% exigé pour chantiers &gt; 800 € HTVA.</p>
-        <p class="ment-text">TVA 21% applicable. Autoliquidation B2B sur demande avec numéro TVA valide.</p>
-        <p class="ment-text">Intérêts de retard : 10%/an + indemnité forfaitaire 40 € en cas de non-paiement à l'échéance.</p>
-      </div>
-      <div class="ment-card">
-        <h3>Devis, validité et annulation</h3>
-        <p class="ment-text">Tout devis valable 30 jours à compter de sa date d'émission.</p>
-        <p class="ment-text">Déplacement et devis gratuits. Réponse sous 24h.</p>
-        <p class="ment-text">Annulation sans frais jusqu'à 24h avant l'intervention.</p>
-        <p class="ment-text" style="color:var(--rouge);font-weight:500">Annulation &lt; 24h : forfait déplacement et mise en service + 30% du devis estimé restent intégralement dus.</p>
-        <p class="ment-text" style="color:var(--rouge);font-weight:500">Annulation le jour J après départ du technicien : 100% du devis facturé.</p>
-        <p class="ment-text">Les prix sont susceptibles d'évoluer. Le tarif en vigueur est celui du devis signé.</p>
-      </div>
-    </div>
-    <div class="ment-grid3">
-      <div class="ment-block">
-        <div class="ment-num">1</div>
-        <h3>Traçage des axes — Obligation absolue du client</h3>
-        <p style="font-size:0.82rem;font-weight:500;color:var(--rouge);line-height:1.7;margin-bottom:10px">Les axes de percement doivent être tracés, numérotés et identifiés AVANT l'arrivée du technicien.</p>
-        <p style="font-size:0.82rem;font-weight:300;color:var(--gris-clair);line-height:1.75;margin-bottom:8px">Responsabilité exclusive du client ou de son représentant technique (conducteur de travaux, chef de chantier).</p>
-        <p style="font-size:0.82rem;font-weight:500;color:var(--rouge);line-height:1.7;margin-bottom:8px">Si axes non tracés à l'arrivée : intervention annulée — forfait déplacement et mise en service intégralement dû.</p>
-        <p style="font-size:0.82rem;font-weight:300;color:var(--gris-clair);line-height:1.75;margin-bottom:8px">Aucune responsabilité pour carottage réalisé sur base d'un traçage erroné fourni par le client.</p>
-        <p style="font-size:0.82rem;font-weight:500;color:var(--rouge);line-height:1.7">Aucun carottage exécuté sans traçage préalable validé — sans exception.</p>
-      </div>
-      <div class="ment-block">
-        <div class="ment-num">2</div>
-        <h3>Responsabilités du client — Préparation chantier</h3>
-        <p style="font-size:0.82rem;font-weight:300;color:var(--gris-clair);line-height:1.75;margin-bottom:8px">Alimentation 230V disponible sur chantier — sinon supplément groupe électrogène (103 €/jour) applicable.</p>
-        <p style="font-size:0.82rem;font-weight:300;color:var(--gris-clair);line-height:1.75;margin-bottom:8px">Carottage en hauteur : échafaudage ou nacelle fournis et sécurisés par le client.</p>
-        <p style="font-size:0.82rem;font-weight:300;color:var(--gris-clair);line-height:1.75;margin-bottom:8px">Accès chantier dégagé, praticable et sécurisé pour le matériel et le technicien.</p>
-        <p style="font-size:0.82rem;font-weight:500;color:var(--rouge);line-height:1.7;margin-bottom:8px">Le client assume l'entière responsabilité de l'absence de réseaux (élec., gaz, eau) aux emplacements de percement.</p>
-        <p style="font-size:0.82rem;font-weight:500;color:var(--rouge);line-height:1.7">Tout dommage résultant d'un traçage incorrect ou d'un réseau non signalé est à charge exclusive du client.</p>
-      </div>
-      <div class="ment-block">
-        <div class="ment-num">3</div>
-        <h3>Responsabilité — Dégâts et dommages tiers</h3>
-        <p style="font-size:0.82rem;font-weight:500;color:var(--rouge);line-height:1.7;margin-bottom:8px">Diam-Tech Béton intervient exclusivement aux emplacements définis et tracés par le client.</p>
-        <p style="font-size:0.82rem;font-weight:300;color:var(--gris-clair);line-height:1.75;margin-bottom:8px">Aucune responsabilité pour dégâts structurels liés à un emplacement mal choisi ou une structure non signalée. Détection préalable des armatures, câbles et conduites à charge exclusive du client.</p>
-        <p style="font-size:0.82rem;font-weight:500;color:var(--rouge);line-height:1.7;margin-bottom:8px">En cas de section accidentelle d'un câble ou réseau non signalé : frais de réparation entièrement à charge du client.</p>
-        <p style="font-size:0.82rem;font-weight:300;color:var(--gris-clair);line-height:1.75">RC professionnelle souscrite. Toute réclamation doit être notifiée par écrit dans les 48h suivant l'intervention. En cas de litige : tribunaux de la Province de Liège — droit belge applicable.</p>
-      </div>
-    </div>
-  </section>
-  <footer><p>TVA: BE 1035.597.041 - RPM Liège - www.diam-tech-beton.be</p><div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap;justify-content:center"><a href="#" onclick="showPage('mentions')" style="font-size:0.68rem;color:rgba(192,32,42,0.7);letter-spacing:0.1em;text-transform:uppercase;text-decoration:none">Mentions légales</a><span style="color:rgba(255,255,255,0.2)">|</span><a href="#" onclick="showPage('cookies')" style="font-size:0.68rem;color:rgba(192,32,42,0.7);letter-spacing:0.1em;text-transform:uppercase;text-decoration:none">Politique cookies</a><span style="color:rgba(255,255,255,0.2)">|</span><span style="font-size:0.65rem;color:rgba(192,32,42,0.55);letter-spacing:0.1em;text-transform:uppercase">Diam-Tech Béton © 2026</span></div></footer>
+  <footer><p>TVA: BE 1035.597.041 - RPM Liège - http://diam-tech-beton.be/</p><div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap;justify-content:center"><a href="#" onclick="showPage('mentions')" style="font-size:0.68rem;color:rgba(192,32,42,0.7);letter-spacing:0.1em;text-transform:uppercase;text-decoration:none">Mentions légales</a><span style="color:rgba(255,255,255,0.2)">|</span><a href="#" onclick="showPage('cookies')" style="font-size:0.68rem;color:rgba(192,32,42,0.7);letter-spacing:0.1em;text-transform:uppercase;text-decoration:none">Politique cookies</a><span style="color:rgba(255,255,255,0.2)">|</span><span style="font-size:0.65rem;color:rgba(192,32,42,0.55);letter-spacing:0.1em;text-transform:uppercase">Diam-Tech Béton © 2026</span></div></footer>
 </div>
 
 <!-- ════ PAGE MENTIONS LÉGALES ════ -->
@@ -917,7 +839,7 @@ function showPage(id) {
         <div class="ment-row"><strong>Responsable : </strong><span>Michael Hofmans, Administrateur délégué</span></div>
         <div class="ment-row"><strong>Adresse : </strong><span>4470 Saint-Georges-sur-Meuse, Belgique</span></div>
         <div class="ment-row"><strong>Téléphone : </strong><span>0484 29 65 48</span></div>
-        <div class="ment-row"><strong>Email : </strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0b62656d644b6f626a66267f6e686326696e7f646525696e">[email&#160;protected]</a></div>
+        <div class="ment-row"><strong>Email : </strong><a href="mailto:info@diam-tech-beton.be" style="color:var(--blanc);text-decoration:none">info@diam-tech-beton.be</a></div>
         <div class="ment-row"><strong>N° TVA : </strong><span>BE 1035.597.041</span></div>
         <div class="ment-row"><strong>RPM : </strong><span>Tribunal de l'entreprise de Liège</span></div>
         <div class="ment-row"><strong>Certification : </strong><span>VCA ✓</span></div>
@@ -928,7 +850,7 @@ function showPage(id) {
         <div class="ment-row"><strong>Site : </strong><span>www.combell.com</span></div>
         <div class="ment-row"><strong>Design : </strong><span>DOUBLE M - Morena Mendicino, graphiste, Liège</span></div>
         <h3 style="margin-top:24px">Protection des données (RGPD)</h3>
-        <p class="ment-text">Données collectées via le formulaire : prénom, nom, téléphone, email, prestation. Finalité : traitement des demandes de devis uniquement. Conservation : 3 ans maximum. Droits : accès, rectification, effacement - contact : <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="cea7a0a8a18eaaa7afa3e3baabada6e3acabbaa1a0e0acab">[email&#160;protected]</a>. APD Belgique : www.autoriteprotectiondonnees.be</p>
+        <p class="ment-text">Données collectées via le formulaire : prénom, nom, téléphone, email, prestation. Finalité : traitement des demandes de devis uniquement. Conservation : 3 ans maximum. Droits : accès, rectification, effacement - contact : <a href="mailto:info@diam-tech-beton.be" style="color:var(--blanc);text-decoration:none">info@diam-tech-beton.be</a>. APD Belgique : www.autoriteprotectiondonnees.be</p>
       </div>
     </div>
     <div class="ment-grid3">
@@ -937,7 +859,7 @@ function showPage(id) {
       <div class="ment-block"><div class="ment-num">⚖</div><h3>Droit applicable</h3><p>Droit belge. Juridiction compétente : Tribunaux de l'arrondissement de Liège.</p></div>
     </div>
   </section>
-  <footer><p>TVA: BE 1035.597.041 - RPM Liège - www.diam-tech-beton.be</p><div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap;justify-content:center"><a href="#" onclick="showPage('mentions')" style="font-size:0.68rem;color:rgba(192,32,42,0.7);letter-spacing:0.1em;text-transform:uppercase;text-decoration:none">Mentions légales</a><span style="color:rgba(255,255,255,0.2)">|</span><a href="#" onclick="showPage('cookies')" style="font-size:0.68rem;color:rgba(192,32,42,0.7);letter-spacing:0.1em;text-transform:uppercase;text-decoration:none">Politique cookies</a><span style="color:rgba(255,255,255,0.2)">|</span><span style="font-size:0.65rem;color:rgba(192,32,42,0.55);letter-spacing:0.1em;text-transform:uppercase">Diam-Tech Béton © 2026</span></div></footer>
+  <footer><p>TVA: BE 1035.597.041 - RPM Liège - http://diam-tech-beton.be/</p><div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap;justify-content:center"><a href="#" onclick="showPage('mentions')" style="font-size:0.68rem;color:rgba(192,32,42,0.7);letter-spacing:0.1em;text-transform:uppercase;text-decoration:none">Mentions légales</a><span style="color:rgba(255,255,255,0.2)">|</span><a href="#" onclick="showPage('cookies')" style="font-size:0.68rem;color:rgba(192,32,42,0.7);letter-spacing:0.1em;text-transform:uppercase;text-decoration:none">Politique cookies</a><span style="color:rgba(255,255,255,0.2)">|</span><span style="font-size:0.65rem;color:rgba(192,32,42,0.55);letter-spacing:0.1em;text-transform:uppercase">Diam-Tech Béton © 2026</span></div></footer>
 </div>
 
 <!-- ════ PAGE COOKIES ════ -->
@@ -951,13 +873,12 @@ function showPage(id) {
     <div class="ment-grid3">
       <div class="ment-block"><div class="ment-num">1</div><h3>Cookies utilisés</h3><p>Ce site utilise uniquement des cookies techniques strictement nécessaires à son bon fonctionnement. Aucun cookie de tracking, de publicité ou d'analyse comportementale n'est déposé sur votre appareil.</p></div>
       <div class="ment-block"><div class="ment-num">2</div><h3>Formulaire de contact</h3><p>Le formulaire utilise Formspree (formspree.io). Ce service peut déposer des cookies techniques liés à la soumission. Consultez leur politique sur formspree.io/legal/privacy-policy.</p></div>
-      <div class="ment-block"><div class="ment-num">3</div><h3>Vos droits</h3><p>Vous pouvez désactiver les cookies dans les paramètres de votre navigateur. Contact : <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="abc2c5cdc4ebcfc2cac686dfcec8c386c9cedfc4c585c9ce">[email&#160;protected]</a>. Autorité de contrôle : APD Belgique - www.autoriteprotectiondonnees.be</p></div>
+      <div class="ment-block"><div class="ment-num">3</div><h3>Vos droits</h3><p>Vous pouvez désactiver les cookies dans les paramètres de votre navigateur. Contact : <a href="mailto:info@diam-tech-beton.be" style="color:var(--blanc);text-decoration:none">info@diam-tech-beton.be</a>. Autorité de contrôle : APD Belgique - www.autoriteprotectiondonnees.be</p></div>
     </div>
   </section>
-  <footer><p>TVA: BE 1035.597.041 - RPM Liège - www.diam-tech-beton.be</p><div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap;justify-content:center"><a href="#" onclick="showPage('mentions')" style="font-size:0.68rem;color:rgba(192,32,42,0.7);letter-spacing:0.1em;text-transform:uppercase;text-decoration:none">Mentions légales</a><span style="color:rgba(255,255,255,0.2)">|</span><a href="#" onclick="showPage('cookies')" style="font-size:0.68rem;color:rgba(192,32,42,0.7);letter-spacing:0.1em;text-transform:uppercase;text-decoration:none">Politique cookies</a><span style="color:rgba(255,255,255,0.2)">|</span><span style="font-size:0.65rem;color:rgba(192,32,42,0.55);letter-spacing:0.1em;text-transform:uppercase">Diam-Tech Béton © 2026</span></div></footer>
+  <footer><p>TVA: BE 1035.597.041 - RPM Liège - http://diam-tech-beton.be/</p><div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap;justify-content:center"><a href="#" onclick="showPage('mentions')" style="font-size:0.68rem;color:rgba(192,32,42,0.7);letter-spacing:0.1em;text-transform:uppercase;text-decoration:none">Mentions légales</a><span style="color:rgba(255,255,255,0.2)">|</span><a href="#" onclick="showPage('cookies')" style="font-size:0.68rem;color:rgba(192,32,42,0.7);letter-spacing:0.1em;text-transform:uppercase;text-decoration:none">Politique cookies</a><span style="color:rgba(255,255,255,0.2)">|</span><span style="font-size:0.65rem;color:rgba(192,32,42,0.55);letter-spacing:0.1em;text-transform:uppercase">Diam-Tech Béton © 2026</span></div></footer>
 </div>
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 function showPage(id) {
   var pages = document.querySelectorAll('.page');
   for (var i = 0; i < pages.length; i++) pages[i].classList.remove('active');
@@ -969,4 +890,24 @@ function showPage(id) {
   if (p) p.classList.add('active');
   var n = document.getElementById('nav-' + id);
   if (n) n.classList.add('active');
-  var mm = document.getElementB
+  var mm = document.getElementById('mobile-menu');
+  var hb = document.getElementById('hamburger');
+  if (mm) mm.classList.remove('open');
+  if (hb) hb.classList.remove('open');
+  window.scrollTo(0, 0);
+}
+function closeMobileMenu() {
+  var mm = document.getElementById('mobile-menu');
+  var hb = document.getElementById('hamburger');
+  if (mm) mm.classList.remove('open');
+  if (hb) hb.classList.remove('open');
+}
+function toggleMenu() {
+  var mm = document.getElementById('mobile-menu');
+  var hb = document.getElementById('hamburger');
+  if (mm) mm.classList.toggle('open');
+  if (hb) hb.classList.toggle('open');
+}
+</script>
+</body>
+</html>
