@@ -278,9 +278,9 @@ footer span{font-size:0.65rem;color:rgba(192,32,42,0.55);letter-spacing:0.1em;te
 
 /* RESPONSIVE MOBILE */
 @media(max-width:768px){
-  nav{padding:0 16px;height:64px;flex-direction:row;align-items:center;justify-content:space-between}
+  nav{padding:0 16px;height:64px;flex-direction:row;align-items:center;justify-content:space-between;overflow:hidden}
   .nav-logo svg{height:78px}
-  .nav-links{display:none}
+  .nav-links{display:none !important;width:0;height:0;overflow:hidden;visibility:hidden}
   .hamburger{display:flex}
   .call-btn{display:flex}
   .page{padding-top:64px}
@@ -722,7 +722,7 @@ function showPage(id) {
       <h2>Parlons de<br>votre chantier.</h2>
       <div class="contact-infos">
         <div class="c-ligne"><div class="c-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14v2.92z"/></svg></div><div class="c-text"><strong>Téléphone</strong><a href="tel:+32484296548">0484 29 65 48</a></div></div>
-        <div class="c-ligne"><div class="c-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div class="c-text"><strong>Email</strong><a href="mailto:info@diam-tech-beton.be" style="color:var(--blanc);text-decoration:none">info@diam-tech-beton.be</a></div></div>
+        <div class="c-ligne"><div class="c-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div class="c-text"><strong>Email</strong><a href="/cdn-cgi/l/email-protection#1a73747c755a7e737b77376e7f797237787f6e757434787f" style="color:var(--blanc);text-decoration:none"><span class="__cf_email__" data-cfemail="2841464e47684c414945055c4d4b40054a4d5c4746064a4d">[email&#160;protected]</span></a></div></div>
         <div class="c-ligne"><div class="c-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div class="c-text"><strong>Adresse</strong><span>4470 Saint-Georges-sur-Meuse, Belgique</span></div></div>
         <div class="c-ligne"><div class="c-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg></div><div class="c-text"><strong>Disponibilité</strong><span>7j/7 - soir &amp; week-end</span></div></div>
         <div class="c-ligne"><div class="c-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg></div><div class="c-text"><strong>Zone d'intervention</strong><span>Toute la Belgique, Nord de la France, Luxembourg</span></div></div>
@@ -839,7 +839,7 @@ function showPage(id) {
         <div class="ment-row"><strong>Responsable : </strong><span>Michael Hofmans, Administrateur délégué</span></div>
         <div class="ment-row"><strong>Adresse : </strong><span>4470 Saint-Georges-sur-Meuse, Belgique</span></div>
         <div class="ment-row"><strong>Téléphone : </strong><span>0484 29 65 48</span></div>
-        <div class="ment-row"><strong>Email : </strong><a href="mailto:info@diam-tech-beton.be" style="color:var(--blanc);text-decoration:none">info@diam-tech-beton.be</a></div>
+        <div class="ment-row"><strong>Email : </strong><a href="/cdn-cgi/l/email-protection#ef86818980af8b868e82c29b8a8c87c28d8a9b8081c18d8a" style="color:var(--blanc);text-decoration:none"><span class="__cf_email__" data-cfemail="b1d8dfd7def1d5d8d0dc9cc5d4d2d99cd3d4c5dedf9fd3d4">[email&#160;protected]</span></a></div>
         <div class="ment-row"><strong>N° TVA : </strong><span>BE 1035.597.041</span></div>
         <div class="ment-row"><strong>RPM : </strong><span>Tribunal de l'entreprise de Liège</span></div>
         <div class="ment-row"><strong>Certification : </strong><span>VCA ✓</span></div>
@@ -850,7 +850,7 @@ function showPage(id) {
         <div class="ment-row"><strong>Site : </strong><span>www.combell.com</span></div>
         <div class="ment-row"><strong>Design : </strong><span>DOUBLE M - Morena Mendicino, graphiste, Liège</span></div>
         <h3 style="margin-top:24px">Protection des données (RGPD)</h3>
-        <p class="ment-text">Données collectées via le formulaire : prénom, nom, téléphone, email, prestation. Finalité : traitement des demandes de devis uniquement. Conservation : 3 ans maximum. Droits : accès, rectification, effacement - contact : <a href="mailto:info@diam-tech-beton.be" style="color:var(--blanc);text-decoration:none">info@diam-tech-beton.be</a>. APD Belgique : www.autoriteprotectiondonnees.be</p>
+        <p class="ment-text">Données collectées via le formulaire : prénom, nom, téléphone, email, prestation. Finalité : traitement des demandes de devis uniquement. Conservation : 3 ans maximum. Droits : accès, rectification, effacement - contact : <a href="/cdn-cgi/l/email-protection#4d24232b220d29242c206039282e25602f28392223632f28" style="color:var(--blanc);text-decoration:none"><span class="__cf_email__" data-cfemail="462f28202906222f272b6b3223252e6b2423322928682423">[email&#160;protected]</span></a>. APD Belgique : www.autoriteprotectiondonnees.be</p>
       </div>
     </div>
     <div class="ment-grid3">
@@ -873,12 +873,12 @@ function showPage(id) {
     <div class="ment-grid3">
       <div class="ment-block"><div class="ment-num">1</div><h3>Cookies utilisés</h3><p>Ce site utilise uniquement des cookies techniques strictement nécessaires à son bon fonctionnement. Aucun cookie de tracking, de publicité ou d'analyse comportementale n'est déposé sur votre appareil.</p></div>
       <div class="ment-block"><div class="ment-num">2</div><h3>Formulaire de contact</h3><p>Le formulaire utilise Formspree (formspree.io). Ce service peut déposer des cookies techniques liés à la soumission. Consultez leur politique sur formspree.io/legal/privacy-policy.</p></div>
-      <div class="ment-block"><div class="ment-num">3</div><h3>Vos droits</h3><p>Vous pouvez désactiver les cookies dans les paramètres de votre navigateur. Contact : <a href="mailto:info@diam-tech-beton.be" style="color:var(--blanc);text-decoration:none">info@diam-tech-beton.be</a>. Autorité de contrôle : APD Belgique - www.autoriteprotectiondonnees.be</p></div>
+      <div class="ment-block"><div class="ment-num">3</div><h3>Vos droits</h3><p>Vous pouvez désactiver les cookies dans les paramètres de votre navigateur. Contact : <a href="/cdn-cgi/l/email-protection#563f38303916323f373b7b2233353e7b3433223938783433" style="color:var(--blanc);text-decoration:none"><span class="__cf_email__" data-cfemail="167f78707956727f777b3b6273757e3b7473627978387473">[email&#160;protected]</span></a>. Autorité de contrôle : APD Belgique - www.autoriteprotectiondonnees.be</p></div>
     </div>
   </section>
   <footer><p>TVA: BE 1035.597.041 - RPM Liège - http://diam-tech-beton.be/</p><div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap;justify-content:center"><a href="#" onclick="showPage('mentions')" style="font-size:0.68rem;color:rgba(192,32,42,0.7);letter-spacing:0.1em;text-transform:uppercase;text-decoration:none">Mentions légales</a><span style="color:rgba(255,255,255,0.2)">|</span><a href="#" onclick="showPage('cookies')" style="font-size:0.68rem;color:rgba(192,32,42,0.7);letter-spacing:0.1em;text-transform:uppercase;text-decoration:none">Politique cookies</a><span style="color:rgba(255,255,255,0.2)">|</span><span style="font-size:0.65rem;color:rgba(192,32,42,0.55);letter-spacing:0.1em;text-transform:uppercase">Diam-Tech Béton © 2026</span></div></footer>
 </div>
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 function showPage(id) {
   var pages = document.querySelectorAll('.page');
   for (var i = 0; i < pages.length; i++) pages[i].classList.remove('active');
@@ -889,25 +889,3 @@ function showPage(id) {
   var p = document.getElementById('page-' + id);
   if (p) p.classList.add('active');
   var n = document.getElementById('nav-' + id);
-  if (n) n.classList.add('active');
-  var mm = document.getElementById('mobile-menu');
-  var hb = document.getElementById('hamburger');
-  if (mm) mm.classList.remove('open');
-  if (hb) hb.classList.remove('open');
-  window.scrollTo(0, 0);
-}
-function closeMobileMenu() {
-  var mm = document.getElementById('mobile-menu');
-  var hb = document.getElementById('hamburger');
-  if (mm) mm.classList.remove('open');
-  if (hb) hb.classList.remove('open');
-}
-function toggleMenu() {
-  var mm = document.getElementById('mobile-menu');
-  var hb = document.getElementById('hamburger');
-  if (mm) mm.classList.toggle('open');
-  if (hb) hb.classList.toggle('open');
-}
-</script>
-</body>
-</html>
